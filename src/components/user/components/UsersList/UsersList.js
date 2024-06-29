@@ -1,13 +1,16 @@
 import React from "react";
 
 import UserItem from "../UserItem/UserItem";
+import { Card } from "../../../shared";
 import "./UsersList.scss";
 
 const UsersList = ({ items }) => {
   if (items.length === 0) {
     return (
       <div className="users-list center">
-        <h2>No users found.</h2>
+        <Card>
+          <h2>No users found.</h2>
+        </Card>
       </div>
     );
   } else {
