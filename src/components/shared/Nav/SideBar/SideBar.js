@@ -13,9 +13,12 @@ const SideBar = (props) => {
       mountOnEnter
       unmountOnExit
     >
-      <aside className="sidebar">{props.children}</aside>
+      <aside className="sidebar" onClick={props.onClick}>
+        {props.children}
+      </aside>
     </CSSTransition>
   );
+
   return ReactDOM.createPortal(
     content,
     document.getElementById("sidebar-hook")
