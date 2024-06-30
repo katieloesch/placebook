@@ -8,15 +8,19 @@ import {
 
 import { Users } from "./components/user";
 import { NewPlace } from "./components/places";
+import { NavMain } from "./components/shared";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" exact element={<Users />}></Route>
-        <Route path="/places/new" element={<NewPlace />}></Route>
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
+      <NavMain />
+      <main>
+        <Routes>
+          <Route path="/" exact element={<Users />}></Route>
+          <Route path="/places/new" element={<NewPlace />}></Route>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </main>
     </Router>
   );
 }

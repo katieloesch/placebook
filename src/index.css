@@ -1,5 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 
+/* variables */
+
+:root {
+  /* colours */
+
+  --primary: #ff0055;
+  --secondary: #f8df00;
+  --secondary-accent: #ffd900;
+  --bg1: #292929;
+  --white: white;
+
+  /* fonts */
+}
+
 * {
   box-sizing: border-box;
 }
