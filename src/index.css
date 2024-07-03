@@ -6,10 +6,14 @@
   /* colours */
 
   --primary: #ff0055;
+  --primary-light: #ff4382;
   --secondary: #f8df00;
   --secondary-accent: #ffd900;
   --bg1: #292929;
   --white: white;
+
+  --danger: #830000;
+  --danger-light: #f34343;
 
   /* fonts */
 }

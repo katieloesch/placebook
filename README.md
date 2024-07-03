@@ -5,6 +5,11 @@
 - create-react-app
 - wireframe
 - erd
+- "node-sass": "^7.0.3"
+
+### day 2: 02/07/2024
+
+modal
 
 ### resources + tutorials
 

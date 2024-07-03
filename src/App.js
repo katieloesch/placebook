@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import { Users } from "./components/user";
-import { NewPlace } from "./components/places";
+import { NewPlace, UserPlaces } from "./components/places";
 import { NavMain } from "./components/shared";
 
 function App() {
@@ -17,7 +17,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" exact element={<Users />}></Route>
-          <Route path="/places/new" element={<NewPlace />}></Route>
+          <Route path="/:userId/places" exact element={<UserPlaces />}></Route>
+          <Route path="/places/new" exact element={<NewPlace />}></Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>

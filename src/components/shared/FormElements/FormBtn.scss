@@ -1,0 +1,61 @@
+.btn {
+  font: inherit;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  background: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  margin-right: 1rem;
+  text-decoration: none;
+  display: inline-block;
+
+  &.btn--inverse {
+    background: transparent;
+    color: var(--primary);
+  }
+
+  &.btn--inverse:hover,
+  &.btn--inverse:active {
+    color: var(--white);
+    background: var(--primary);
+  }
+
+  &.btn--danger {
+    background: var(--danger);
+    border-color: var(--danger);
+  }
+
+  &.btn--danger:hover,
+  &.btn--danger:active {
+    background: var(--danger-light);
+    border-color: var(--danger-light);
+  }
+
+  &.btn:disabled,
+  &.btn:hover:disabled,
+  &.btn:active:disabled {
+    background: #ccc;
+    color: #979797;
+    border-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  &.btn--small {
+    font-size: 0.8rem;
+  }
+
+  &.btn--big {
+    font-size: 1.5rem;
+  }
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover,
+.btn:active {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+}
