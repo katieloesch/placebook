@@ -10,6 +10,7 @@ export { default as Avatar } from "./UIElements/Avatar/Avatar";
 export { default as Card } from "./UIElements/Card/Card";
 export { default as Backdrop } from "./UIElements/Backdrop/Backdrop";
 export { default as Modal } from "./UIElements/Modal/Modal";
+export { default as Map } from "./UIElements/Map/Map";
 
 // FormElements
 export { default as FormBtn } from "./FormElements/FormBtn";

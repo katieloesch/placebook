@@ -15,6 +15,7 @@ const PlaceList = ({ items }) => {
       </div>
     );
   }
+  console.log(items[0]);
 
   return (
     <ul className="place-list">
@@ -27,7 +28,7 @@ const PlaceList = ({ items }) => {
           description={place.description}
           address={place.address}
           creatorId={place.creator}
-          coordinates={place.location}
+          coordinates={place.coordinates}
         />
       ))}
     </ul>

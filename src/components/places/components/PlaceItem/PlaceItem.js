@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Card, FormBtn, Modal } from "../../../shared";
+import { Card, FormBtn, Map, Modal } from "../../../shared";
 import "./PlaceItem.scss";
 
-const PlaceItem = ({ img, title, address, description, id }) => {
+const PlaceItem = ({ img, title, address, description, id, coordinates }) => {
   const [showMap, setShowMap] = useState(false);
 
   const openMap = () => {
@@ -23,7 +23,10 @@ const PlaceItem = ({ img, title, address, description, id }) => {
         footerClass="place-item__modal-actions"
         footer={<FormBtn onClick={closeMap}>close</FormBtn>}
       >
-        <div className="map-container"></div>
+        <div className="map-container">
+          <Map center={coordinates} zoom={16} />
+          {/* coordinates format: { lat: -34.397, lng: 150.644 } */}
+        </div>
       </Modal>
       <li className="place-item">
         <Card className="place-item__content">
@@ -36,7 +39,9 @@ const PlaceItem = ({ img, title, address, description, id }) => {
             <p>{description}</p>
           </div>
           <div className="place-item__actions">
-            <FormBtn inverse>view on map</FormBtn>
+            <FormBtn inverse onClick={openMap}>
+              view on map
+            </FormBtn>
             <FormBtn to={`/places/${id}`}>edit</FormBtn>
             <FormBtn danger>delete</FormBtn>
           </div>

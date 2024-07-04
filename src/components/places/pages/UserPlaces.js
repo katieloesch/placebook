@@ -11,8 +11,8 @@ const DUMMY_PLACES = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRh0g9I_ZYibJtTuldCxDJBGB0r7-TiU2EeA&s",
     address: "100 Camden High St, London NW1 0LU",
     coordinates: {
-      lat: "51.536388",
-      long: "-0.140556",
+      lat: 51.536388,
+      lng: -0.140556,
     },
     creator: "u0",
   },
@@ -24,8 +24,8 @@ const DUMMY_PLACES = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRh0g9I_ZYibJtTuldCxDJBGB0r7-TiU2EeA&s",
     address: "100 Camden High St, London NW1 0LU",
     coordinates: {
-      lat: "51.536388",
-      long: "-0.140556",
+      lat: 51.536388,
+      lng: -0.140556,
     },
     creator: "u1",
   },
