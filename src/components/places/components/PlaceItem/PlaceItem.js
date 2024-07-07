@@ -24,7 +24,7 @@ const PlaceItem = ({ img, title, address, description, id, coordinates }) => {
         footer={<FormBtn onClick={closeMap}>close</FormBtn>}
       >
         <div className="map-container">
-          <Map center={coordinates} zoom={16} />
+          <Map center={coordinates} zoom={15} />
           {/* coordinates format: { lat: -34.397, lng: 150.644 } */}
         </div>
       </Modal>

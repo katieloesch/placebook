@@ -11,9 +11,16 @@
   --secondary-accent: #ffd900;
   --bg1: #292929;
   --white: white;
+  --grey: #ccc;
+  --offwhite: #f8f8f8;
+  --offwhite2: #ebebeb;
 
   --danger: #830000;
   --danger-light: #f34343;
+
+  --purple: #510077;
+  --red: red;
+  --pink-light: #ffd1d1;
 
   /* fonts */
 }

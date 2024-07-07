@@ -1,4 +1,3 @@
-// shared components
 // Navigation
 export { default as NavMain } from "./Nav/NavMain/NavMain";
 export { default as HeaderMain } from "./Nav/HeaderMain/HeaderMain";
@@ -14,3 +13,4 @@ export { default as Map } from "./UIElements/Map/Map";
 
 // FormElements
 export { default as FormBtn } from "./FormElements/FormBtn";
+export { default as FormInput } from "./FormElements/FormInput";
