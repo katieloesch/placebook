@@ -27,6 +27,8 @@ const FormInput = ({
   label,
   type,
   element,
+  initialValue,
+  initialValid,
   placeholder,
   rows,
   errorMsg,
@@ -34,9 +36,9 @@ const FormInput = ({
   onInput,
 }) => {
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: "",
+    value: initialValue || "",
     isTouched: false,
-    isValid: false,
+    isValid: initialValid || false,
   });
 
   const { value, isValid } = inputState;
