@@ -48,7 +48,7 @@ const NewPlace = () => {
         element="textarea"
         label="Description"
         validators={[VALIDATOR_MINLENGTH(5)]}
-        errorMsg="Please enter a valid description (at least 5 characters)."
+        errorMsg="Please enter a valid description (min 5 characters)."
         onInput={inputHandler}
       />
       <FormInput

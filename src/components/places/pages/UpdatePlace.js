@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useForm } from "../../shared/hooks/form-hook";
@@ -7,7 +7,6 @@ import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../shared/util/validators";
-
 import "./PlaceForm.scss";
 
 const DUMMY_PLACES = [
@@ -37,27 +36,71 @@ const DUMMY_PLACES = [
     },
     creator: "u1",
   },
+  {
+    id: "p2",
+    title: "Empire State Building",
+    description: "One of the most famous sky scrapers in the world!",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg",
+    address: "20 W 34th St, New York, NY 10001",
+    location: {
+      lat: 40.7484405,
+      lng: -73.9878584,
+    },
+    creator: "u0",
+  },
+  {
+    id: "p3",
+    title: "Empire State Building",
+    description: "One of the most famous sky scrapers in the world!",
+    imgUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg",
+    address: "20 W 34th St, New York, NY 10001",
+    location: {
+      lat: 40.7484405,
+      lng: -73.9878584,
+    },
+    creator: "u1",
+  },
 ];
 
 const UpdatePlace = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
   const placeId = params.placeId;
 
-  const placeToUpdate = DUMMY_PLACES.find((place) => place.id === placeId);
-
-  const [formState, inputHandler] = useForm(
+  const [formState, inputHandler, setFormData] = useForm(
     {
       title: {
-        value: placeToUpdate.title,
-        isValid: true,
+        value: "",
+        isValid: false,
       },
       description: {
-        value: placeToUpdate.description,
-        isValid: true,
+        value: "",
+        isValid: false,
       },
     },
-    true
+    false
   );
+
+  const placeToUpdate = DUMMY_PLACES.find((place) => place.id === placeId);
+
+  useEffect(() => {
+    setFormData(
+      {
+        title: {
+          value: placeToUpdate.title,
+          isValid: true,
+        },
+        description: {
+          value: placeToUpdate.description,
+          isValid: true,
+        },
+      },
+      true
+    );
+    setIsLoading(false);
+  }, [setFormData, placeToUpdate]);
 
   const submitUpdateForm = (e) => {
     e.preventDefault();
@@ -67,7 +110,15 @@ const UpdatePlace = () => {
   if (!placeToUpdate) {
     return (
       <div className="center">
-        <h2>Could not find place!</h2>;
+        <h2>Could not find place!</h2>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="center">
+        <h2>Loading...</h2>
       </div>
     );
   }
@@ -80,7 +131,7 @@ const UpdatePlace = () => {
         element="input"
         type="text"
         label="Title"
-        validators={[VALIDATOR_REQUIRE]}
+        validators={[VALIDATOR_REQUIRE()]}
         errorMsg="Please enter a valid title."
         onInput={inputHandler}
         initialValue={formState.inputs.title.value}
@@ -92,7 +143,7 @@ const UpdatePlace = () => {
         type="text"
         label="Description"
         validators={[VALIDATOR_MINLENGTH(5)]}
-        errorMsg="Please enter a valid description (at least 5 characters)."
+        errorMsg="Please enter a valid description (min 5 characters)."
         onInput={inputHandler}
         initialValue={formState.inputs.description.value}
         initialValid={formState.inputs.description.isValid}

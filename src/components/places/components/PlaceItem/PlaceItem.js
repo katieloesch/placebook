@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { Card, FormBtn, Map, Modal } from "../../../shared";
 import "./PlaceItem.scss";
 

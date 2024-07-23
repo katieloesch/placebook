@@ -2,10 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./location_icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <title>Location App</title>
+    <title>PlaceBook</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVCP3eNPnWibLCG8-AhQPHv27oZ3GniSY"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -13,10 +18,5 @@
     <div id="modal-hook"></div>
     <div id="sidebar-hook"></div>
     <div id="root"></div>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVCP3eNPnWibLCG8-AhQPHv27oZ3GniSY"
-      async
-      defer
-    ></script>
   </body>
 </html>

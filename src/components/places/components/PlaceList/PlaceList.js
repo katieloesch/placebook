@@ -15,7 +15,6 @@ const PlaceList = ({ items }) => {
       </div>
     );
   }
-  console.log(items[0]);
 
   return (
     <ul className="place-list">
