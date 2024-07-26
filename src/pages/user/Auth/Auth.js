@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Card, FormBtn, FormInput } from '../../../components';
 import { useForm } from '../../../components/shared/hooks/form-hook';
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
+  VALIDATOR_REQUIRE,
 } from '../../../components/shared/util/validators';
 import './Auth.scss';
 
 const Auth = () => {
-  const [formState, inputHandler] = useForm(
+  const [userRegistered, setUserRegistered] = useState(true);
+
+  const [formState, inputHandler, setFormData] = useForm(
     {
       email: {
         value: '',
@@ -23,6 +26,27 @@ const Auth = () => {
     false
   );
 
+  const switchAuthMode = () => {
+    if (!userRegistered) {
+      setFormData(
+        { ...formState.inputs, name: undefined },
+        formState.inputs.email.isValid && formState.inputs.password.isValid
+      );
+    } else {
+      setFormData(
+        {
+          ...formState.inputs,
+          name: {
+            value: '',
+            isValid: false,
+          },
+        },
+        false
+      );
+    }
+    setUserRegistered((prevMode) => !prevMode);
+  };
+
   const authSubmitHandler = (e) => {
     e.preventDefault();
     console.log(formState.inputs);
@@ -33,6 +57,16 @@ const Auth = () => {
       <h2>Login Required</h2>
       <hr />
       <form onSubmit={authSubmitHandler}>
+        {!userRegistered && (
+          <FormInput
+            element='input'
+            id='name'
+            label='Name'
+            validators={[VALIDATOR_REQUIRE()]}
+            errorMsg='Please enter a name.'
+            onInput={inputHandler}
+          />
+        )}
         <FormInput
           element='input'
           id='email'
@@ -52,9 +86,14 @@ const Auth = () => {
           onInput={inputHandler}
         />
         <FormBtn type='submit' disabled={!formState.isValid}>
-          Login
+          {userRegistered ? 'Login' : 'Sign Up'}
         </FormBtn>
       </form>
+      <FormBtn inverse onClick={switchAuthMode}>
+        {userRegistered
+          ? "Don't have an account? Sign Up!"
+          : 'Already have an account? Log in!'}
+      </FormBtn>
     </Card>
   );
 };
