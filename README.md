@@ -1,15 +1,26 @@
 # Frontend
 
+### dependencies
+
+- sass (v1.77.8)
+- react-router-dom (v6.24.0)
+- react-transition-group (v4.4.5)
+
 ### day 1: 29/06/2024
 
 - create-react-app
 - wireframe
 - erd
-- "node-sass": "^7.0.3"
 
 ### day 2: 02/07/2024
 
 modal
+
+### 26/07/2024
+
+- modal to confirm deletion
+- switch to single quotes
+- refactoring folder structure/imports
 
 ### resources + tutorials
 
