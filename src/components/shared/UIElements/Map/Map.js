@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback } from 'react';
 
-import "./Map.scss";
+import './Map.scss';
 
 const loadScript = (url) => {
   return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
+    const script = document.createElement('script');
     script.src = url;
     script.async = true;
     script.defer = true;
@@ -31,9 +31,9 @@ const Map = ({ className, style, center, zoom }) => {
       });
 
       console.log(
-        "Map initialized with center:",
+        'Map initialized with center:',
         validCenter,
-        "and zoom:",
+        'and zoom:',
         zoom
       );
 
@@ -64,7 +64,7 @@ const Map = ({ className, style, center, zoom }) => {
           initializeMap();
         })
         .catch((error) => {
-          console.error("Error loading Google Maps script:", error);
+          console.error('Error loading Google Maps script:', error);
         });
     } else {
       initializeMap();
@@ -75,7 +75,7 @@ const Map = ({ className, style, center, zoom }) => {
 
     return () => {
       if (currentMapRef) {
-        currentMapRef.innerHTML = "";
+        currentMapRef.innerHTML = '';
       }
     };
   }, [center, zoom, initializeMap]);

@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
-import UserItem from "../UserItem/UserItem";
-import { Card } from "../../../shared";
-import "./UsersList.scss";
+import UserItem from '../UserItem/UserItem';
+import { Card } from '../../../shared';
+import './UsersList.scss';
 
 const UsersList = ({ items }) => {
   if (items.length === 0) {
     return (
-      <div className="users-list center">
+      <div className='users-list center'>
         <Card>
           <h2>No users found.</h2>
         </Card>
@@ -15,7 +15,7 @@ const UsersList = ({ items }) => {
     );
   } else {
     return (
-      <ul className="users-list">
+      <ul className='users-list'>
         {items.map((user) => (
           <UserItem
             key={user.id}

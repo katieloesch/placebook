@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./Avatar.scss";
+import './Avatar.scss';
 
 const Avatar = ({ className, style, img, alt, width }) => {
   return (

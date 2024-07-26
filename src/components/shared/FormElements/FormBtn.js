@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import "./FormBtn.scss";
+import './FormBtn.scss';
 
 const FormBtn = ({
   href,
@@ -18,9 +18,9 @@ const FormBtn = ({
   if (href) {
     return (
       <a
-        className={`btn btn--${size || "default"} ${
-          inverse && "btn--inverse"
-        } ${danger && "btn--danger"}`}
+        className={`btn btn--${size || 'default'} ${
+          inverse && 'btn--inverse'
+        } ${danger && 'btn--danger'}`}
         href={href}
       >
         {children}
@@ -32,9 +32,9 @@ const FormBtn = ({
       <Link
         to={to}
         exact={exact}
-        className={`btn btn--${size || "default"} ${
-          inverse && "btn--inverse"
-        } ${danger && "btn--danger"}`}
+        className={`btn btn--${size || 'default'} ${
+          inverse && 'btn--inverse'
+        } ${danger && 'btn--danger'}`}
       >
         {children}
       </Link>
@@ -42,8 +42,8 @@ const FormBtn = ({
   }
   return (
     <button
-      className={`btn btn--${size || "default"} ${inverse && "btn--inverse"} ${
-        danger && "btn--danger"
+      className={`btn btn--${size || 'default'} ${inverse && 'btn--inverse'} ${
+        danger && 'btn--danger'
       }`}
       type={type}
       onClick={onClick}

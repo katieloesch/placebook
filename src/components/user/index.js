@@ -1,4 +1,4 @@
 // User pages
-export { default as Users } from "./pages/Users";
+export { default as Users } from './pages/Users';
 
 // User components

@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import { Users } from "./components/user";
-import { NewPlace, UpdatePlace, UserPlaces } from "./components/places";
-import { NavMain } from "./components/shared";
+import { Users } from './components/user';
+import { NewPlace, UpdatePlace, UserPlaces } from './components/places';
+import { NavMain } from './components/shared';
 
 function App() {
   return (
@@ -16,16 +16,16 @@ function App() {
       <NavMain />
       <main>
         <Routes>
-          <Route path="/" exact element={<Users />}></Route>
+          <Route path='/' exact element={<Users />}></Route>
 
-          <Route path="/places/new" exact element={<NewPlace />}></Route>
+          <Route path='/places/new' exact element={<NewPlace />}></Route>
           <Route
-            path="/places/:placeId"
+            path='/places/:placeId'
             exact
             element={<UpdatePlace />}
           ></Route>
-          <Route path="/:userId/places" exact element={<UserPlaces />}></Route>
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path='/:userId/places' exact element={<UserPlaces />}></Route>
+          <Route path='*' element={<Navigate to='/' />} />
         </Routes>
       </main>
     </Router>

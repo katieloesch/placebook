@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
-import ReactDOM from "react-dom";
-import { CSSTransition } from "react-transition-group";
+import React, { useRef } from 'react';
+import ReactDOM from 'react-dom';
+import { CSSTransition } from 'react-transition-group';
 
-import { Backdrop } from "../..";
-import "./Modal.scss";
+import { Backdrop } from '../..';
+import './Modal.scss';
 
 const Overlay = ({
   className,
@@ -28,7 +28,7 @@ const Overlay = ({
       <footer className={`modal__footer ${footerClass}`}>{footer}</footer>
     </div>
   );
-  return ReactDOM.createPortal(content, document.getElementById("modal-hook"));
+  return ReactDOM.createPortal(content, document.getElementById('modal-hook'));
 };
 
 const Modal = (props) => {
@@ -41,7 +41,7 @@ const Modal = (props) => {
         mountOnEnter
         unmountOnExit
         timeout={200}
-        classNames="modal"
+        classNames='modal'
         nodeRef={nodeRef}
       >
         <Overlay {...props} />
