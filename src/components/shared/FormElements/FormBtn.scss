@@ -35,9 +35,9 @@
   &.btn:disabled,
   &.btn:hover:disabled,
   &.btn:active:disabled {
-    background: #ccc;
-    color: #979797;
-    border-color: #ccc;
+    background: var(--grey);
+    color: grey(--grey-dark);
+    border-color: var(--grey);
     cursor: not-allowed;
   }
 

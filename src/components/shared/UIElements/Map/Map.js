@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from "react";
+
 import "./Map.scss";
 
 const loadScript = (url) => {
@@ -15,45 +16,6 @@ const loadScript = (url) => {
 
 const Map = ({ className, style, center, zoom }) => {
   const mapRef = useRef();
-
-  // const initializeMap = () => {
-  //   if (mapRef.current && window.google && window.google.maps) {
-  //     const validCenter = {
-  //       lat: parseFloat(center.lat),
-  //       lng: parseFloat(center.lng),
-  //     };
-
-  //     const map = new window.google.maps.Map(mapRef.current, {
-  //       center: validCenter,
-  //       zoom: zoom,
-  //     });
-
-  //     // Debugging logs
-  //     console.log(
-  //       "Map initialized with center:",
-  //       validCenter,
-  //       "and zoom:",
-  //       zoom
-  //     );
-
-  //     // Check if AdvancedMarkerElement is available
-  //     if (
-  //       window.google.maps.marker &&
-  //       window.google.maps.marker.AdvancedMarkerElement
-  //     ) {
-  //       new window.google.maps.marker.AdvancedMarkerElement({
-  //         position: center,
-  //         map: map,
-  //       });
-  //     } else {
-  //       // Fallback to using google.maps.Marker
-  //       new window.google.maps.Marker({
-  //         position: center,
-  //         map: map,
-  //       });
-  //     }
-  //   }
-  // };
 
   const initializeMap = useCallback(() => {
     if (mapRef.current && window.google && window.google.maps) {
@@ -117,18 +79,6 @@ const Map = ({ className, style, center, zoom }) => {
       }
     };
   }, [center, zoom, initializeMap]);
-
-  // useEffect(() => {
-  //   const map = new window.google.maps.Map(mapRef.current, {
-  //     center: center,
-  //     zoom: zoom,
-  //   });
-
-  //   new window.google.maps.Marker({
-  //     position: center,
-  //     map: map,
-  //   });
-  // }, [center, zoom]);
 
   return <div ref={mapRef} className={`map ${className} style=${style}`}></div>;
 };

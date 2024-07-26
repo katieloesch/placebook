@@ -33,7 +33,7 @@ const NavMain = () => {
         </button>
 
         <h1 className="nav-main__title">
-          <Link to="/">Your placessss</Link>
+          <Link to="/">PlaceBook</Link>
         </h1>
 
         <nav className="nav-main__header-nav">

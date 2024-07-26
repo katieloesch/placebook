@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Avatar.scss";
 
 const Avatar = ({ className, style, img, alt, width }) => {
