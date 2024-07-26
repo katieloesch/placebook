@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { useForm } from '../../shared/hooks/form-hook';
-import { FormInput, FormBtn } from '../../shared';
+import { useForm } from '../../components/shared/hooks/form-hook';
+import { FormInput, FormBtn } from '../../components';
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
-} from '../../shared/util/validators';
+} from '../../components/shared/util/validators';
 import './PlaceForm.scss';
 
 const NewPlace = () => {

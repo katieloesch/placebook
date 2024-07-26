@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
-import { Backdrop } from '../..';
+import { Backdrop } from '../../../../components';
 import './Modal.scss';
 
 const Overlay = ({

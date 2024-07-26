@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Card, FormBtn, Map, Modal } from '../../../shared';
+import { Card, FormBtn, Map, Modal } from '../../../components';
 import './PlaceItem.scss';
 
 const PlaceItem = ({ img, title, address, description, id, coordinates }) => {

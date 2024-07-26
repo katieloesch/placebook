@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card, FormBtn } from '../../../shared';
+import { Card, FormBtn } from '../../../components';
 import PlaceItem from '../PlaceItem/PlaceItem';
 import './PlaceList.scss';
 

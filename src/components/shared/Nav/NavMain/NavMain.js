@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { HeaderMain, NavLinks, SideBar, Backdrop } from '../../../shared';
+import {
+  HeaderMain,
+  NavLinks,
+  SideBar,
+  Backdrop,
+} from '../../../../components';
 import './NavMain.scss';
 
 const NavMain = () => {

@@ -6,9 +6,8 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { Users } from './components/user';
-import { NewPlace, UpdatePlace, UserPlaces } from './components/places';
-import { NavMain } from './components/shared';
+import { NewPlace, UpdatePlace, UserPlaces, Users } from './pages';
+import { NavMain } from './components';
 
 function App() {
   return (

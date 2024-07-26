@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Avatar, Card } from '../../../shared';
+import { Avatar, Card } from '../../../components';
 import './UserItem.scss';
 
 const UserItem = ({ id, name, placeCount, img }) => {

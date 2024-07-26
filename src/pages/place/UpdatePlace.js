@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useForm } from '../../shared/hooks/form-hook';
-import { Card, FormBtn, FormInput } from '../../shared';
+import { useForm } from '../../components/shared/hooks/form-hook';
+import { Card, FormBtn, FormInput } from '../../components';
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
-} from '../../shared/util/validators';
+} from '../../components/shared/util/validators';
 import './PlaceForm.scss';
 
 const DUMMY_PLACES = [

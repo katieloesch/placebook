@@ -1,7 +1,6 @@
 import React from 'react';
 
-import UserItem from '../UserItem/UserItem';
-import { Card } from '../../../shared';
+import { Card, UserItem } from '../../../components';
 import './UsersList.scss';
 
 const UsersList = ({ items }) => {
