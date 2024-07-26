@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useForm } from '../../shared/hooks/form-hook';
-import { FormBtn, FormInput } from '../../shared';
+import { Card, FormBtn, FormInput } from '../../shared';
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
@@ -86,19 +86,22 @@ const UpdatePlace = () => {
   const placeToUpdate = DUMMY_PLACES.find((place) => place.id === placeId);
 
   useEffect(() => {
-    setFormData(
-      {
-        title: {
-          value: placeToUpdate.title,
-          isValid: true,
+    if (placeToUpdate) {
+      setFormData(
+        {
+          title: {
+            value: placeToUpdate.title,
+            isValid: true,
+          },
+          description: {
+            value: placeToUpdate.description,
+            isValid: true,
+          },
         },
-        description: {
-          value: placeToUpdate.description,
-          isValid: true,
-        },
-      },
-      true
-    );
+        true
+      );
+    }
+
     setIsLoading(false);
   }, [setFormData, placeToUpdate]);
 
@@ -110,7 +113,9 @@ const UpdatePlace = () => {
   if (!placeToUpdate) {
     return (
       <div className='center'>
-        <h2>Could not find place!</h2>
+        <Card>
+          <h2>Could not find place!</h2>
+        </Card>
       </div>
     );
   }
