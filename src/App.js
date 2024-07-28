@@ -21,6 +21,29 @@ function App() {
     setIsloggedIn(false);
   }, []);
 
+  let routes;
+
+  if (isLoggedIn) {
+    routes = (
+      <Routes>
+        <Route path='/' exact element={<Users />}></Route>
+        <Route path='/:userId/places' exact element={<UserPlaces />}></Route>
+        <Route path='/places/new' exact element={<NewPlace />}></Route>
+        <Route path='/places/:placeId' exact element={<UpdatePlace />}></Route>
+        <Route path='*' element={<Navigate to='/' />} />
+      </Routes>
+    );
+  } else {
+    routes = (
+      <Routes>
+        <Route path='/' exact element={<Users />}></Route>
+        <Route path='/:userId/places' exact element={<UserPlaces />}></Route>
+        <Route path='/auth' element={<Auth />}></Route>
+        <Route path='*' element={<Navigate to='/auth' />} />
+      </Routes>
+    );
+  }
+
   return (
     <AuthContext.Provider
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
@@ -28,29 +51,7 @@ function App() {
       <Router>
         <NavMain />
 
-        <main>
-          <Routes>
-            <Route path='/' exact element={<Users />}></Route>
-
-            <Route path='/auth' element={<Auth />}></Route>
-
-            <Route path='/places/new' exact element={<NewPlace />}></Route>
-
-            <Route
-              path='/places/:placeId'
-              exact
-              element={<UpdatePlace />}
-            ></Route>
-
-            <Route
-              path='/:userId/places'
-              exact
-              element={<UserPlaces />}
-            ></Route>
-
-            <Route path='*' element={<Navigate to='/' />} />
-          </Routes>
-        </main>
+        <main>{routes}</main>
       </Router>
     </AuthContext.Provider>
   );
