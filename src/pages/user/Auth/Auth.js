@@ -80,6 +80,7 @@ const Auth = () => {
           errorMsg='Please enter a valid email address.'
           onInput={inputHandler}
         />
+
         <FormInput
           element='input'
           id='password'
@@ -89,10 +90,12 @@ const Auth = () => {
           errorMsg='Please enter a valid email password (min 5 characters).'
           onInput={inputHandler}
         />
+
         <FormBtn type='submit' disabled={!formState.isValid}>
           {userRegistered ? 'Login' : 'Sign Up'}
         </FormBtn>
       </form>
+
       <FormBtn inverse onClick={switchAuthMode}>
         {userRegistered
           ? "Don't have an account? Sign Up!"

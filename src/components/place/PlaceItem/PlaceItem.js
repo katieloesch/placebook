@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { Card, FormBtn, Map, Modal } from '../../../components';
+import { AuthContext } from '../../shared/context/authContext';
 import './PlaceItem.scss';
 
 const PlaceItem = ({ img, title, address, description, id, coordinates }) => {
+  const auth = useContext(AuthContext);
   const [showMap, setShowMap] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
 
@@ -80,10 +82,12 @@ const PlaceItem = ({ img, title, address, description, id, coordinates }) => {
             <FormBtn inverse onClick={openMap}>
               view on map
             </FormBtn>
-            <FormBtn to={`/places/${id}`}>edit</FormBtn>
-            <FormBtn danger onClick={openModalDelete}>
-              delete
-            </FormBtn>
+            {auth.isLoggedIn && <FormBtn to={`/places/${id}`}>edit</FormBtn>}
+            {auth.isLoggedIn && (
+              <FormBtn danger onClick={openModalDelete}>
+                delete
+              </FormBtn>
+            )}
           </div>
         </Card>
       </li>
