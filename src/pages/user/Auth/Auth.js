@@ -1,6 +1,12 @@
 import React, { useContext, useState } from 'react';
 
-import { Card, FormBtn, FormInput } from '../../../components';
+import {
+  Card,
+  ErrorModal,
+  FormBtn,
+  FormInput,
+  LoadingSpinner,
+} from '../../../components';
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
@@ -15,6 +21,8 @@ const Auth = () => {
   const auth = useContext(AuthContext);
 
   const [userRegistered, setUserRegistered] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -57,6 +65,7 @@ const Auth = () => {
     if (userRegistered) {
     } else {
       try {
+        setIsLoading(true);
         const response = await fetch(BASE_URL + '/users/signup', {
           method: 'POST',
           headers: {
@@ -69,62 +78,80 @@ const Auth = () => {
           }),
         });
 
-        const createdUser = await response.json();
-        console.log(createdUser);
+        const data = await response.json();
+
+        if (!response.ok) {
+          // a response is sent back but there is an error
+          throw new Error(data.message);
+        }
+
+        console.log(data);
+
+        setIsLoading(false);
+        auth.login();
       } catch (error) {
         console.log(error);
+
+        setIsLoading(false);
+        setError(error.message || 'Something went wrong, please try again.');
       }
     }
+  };
 
-    auth.login();
+  const clearError = () => {
+    setError(null);
   };
 
   return (
-    <Card className='authentication'>
-      <h2>Login Required</h2>
-      <hr />
-      <form onSubmit={authSubmitHandler}>
-        {!userRegistered && (
+    <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
+      <Card className='authentication'>
+        {isLoading && <LoadingSpinner asOverlay />}
+        <h2>Login Required</h2>
+        <hr />
+        <form onSubmit={authSubmitHandler}>
+          {!userRegistered && (
+            <FormInput
+              element='input'
+              id='name'
+              label='Name'
+              validators={[VALIDATOR_REQUIRE()]}
+              errorMsg='Please enter a name.'
+              onInput={inputHandler}
+            />
+          )}
           <FormInput
             element='input'
-            id='name'
-            label='Name'
-            validators={[VALIDATOR_REQUIRE()]}
-            errorMsg='Please enter a name.'
+            id='email'
+            type='email'
+            label='email'
+            validators={[VALIDATOR_EMAIL()]}
+            errorMsg='Please enter a valid email address.'
             onInput={inputHandler}
           />
-        )}
-        <FormInput
-          element='input'
-          id='email'
-          type='email'
-          label='email'
-          validators={[VALIDATOR_EMAIL()]}
-          errorMsg='Please enter a valid email address.'
-          onInput={inputHandler}
-        />
 
-        <FormInput
-          element='input'
-          id='password'
-          type='password'
-          label='password'
-          validators={[VALIDATOR_MINLENGTH(5)]}
-          errorMsg='Please enter a valid email password (min 5 characters).'
-          onInput={inputHandler}
-        />
+          <FormInput
+            element='input'
+            id='password'
+            type='password'
+            label='password'
+            validators={[VALIDATOR_MINLENGTH(5)]}
+            errorMsg='Please enter a valid email password (min 5 characters).'
+            onInput={inputHandler}
+          />
 
-        <FormBtn type='submit' disabled={!formState.isValid}>
-          {userRegistered ? 'Login' : 'Sign Up'}
+          <FormBtn type='submit' disabled={!formState.isValid}>
+            {userRegistered ? 'Login' : 'Sign Up'}
+          </FormBtn>
+        </form>
+
+        <FormBtn inverse onClick={switchAuthMode}>
+          {userRegistered
+            ? "Don't have an account? Sign Up!"
+            : 'Already have an account? Log in!'}
         </FormBtn>
-      </form>
-
-      <FormBtn inverse onClick={switchAuthMode}>
-        {userRegistered
-          ? "Don't have an account? Sign Up!"
-          : 'Already have an account? Log in!'}
-      </FormBtn>
-    </Card>
+      </Card>
+    </React.Fragment>
   );
 };
 
