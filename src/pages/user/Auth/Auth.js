@@ -22,7 +22,7 @@ const Auth = () => {
 
   const [userRegistered, setUserRegistered] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
 
   const [formState, inputHandler, setFormData] = useForm(
     {
