@@ -16,8 +16,10 @@ export { default as SideBar } from './shared/Nav/SideBar/SideBar';
 
 // UI elements
 export { default as Avatar } from './shared/UIElements/Avatar/Avatar';
-export { default as Card } from './shared/UIElements/Card/Card';
 export { default as Backdrop } from './shared/UIElements/Backdrop/Backdrop';
+export { default as Card } from './shared/UIElements/Card/Card';
+export { default as ErrorModal } from './shared/UIElements/ErrorModal/ErrorModal';
+export { default as LoadingSpinner } from './shared/UIElements/LoadingSpinner/LoadingSpinner';
 export { default as Modal } from './shared/UIElements/Modal/Modal';
 export { default as Map } from './shared/UIElements/Map/Map';
 
