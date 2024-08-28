@@ -8,6 +8,7 @@ import {
 } from '../../../components/shared/util/validators';
 import { useForm } from '../../../components/shared/hooks/form-hook';
 import { AuthContext } from '../../../components/shared/context/authContext';
+import { BASE_URL } from '../../../components/shared/util/urls';
 import './Auth.scss';
 
 const Auth = () => {
@@ -50,9 +51,31 @@ const Auth = () => {
     setUserRegistered((prevMode) => !prevMode);
   };
 
-  const authSubmitHandler = (e) => {
+  const authSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(formState.inputs);
+
+    if (userRegistered) {
+    } else {
+      try {
+        const response = await fetch(BASE_URL + '/users/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formState.inputs.name.value,
+            email: formState.inputs.email.value,
+            password: formState.inputs.password.value,
+          }),
+        });
+
+        const createdUser = await response.json();
+        console.log(createdUser);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
     auth.login();
   };
 
