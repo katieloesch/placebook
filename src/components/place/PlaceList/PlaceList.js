@@ -22,12 +22,12 @@ const PlaceList = ({ items }) => {
         <PlaceItem
           key={place.id}
           id={place.id}
-          img={place.imgUrl}
+          img={place.image}
           title={place.title}
           description={place.description}
           address={place.address}
           creatorId={place.creator}
-          coordinates={place.coordinates}
+          coordinates={place.location}
         />
       ))}
     </ul>
