@@ -1,41 +1,28 @@
 import React, { useEffect, useState } from 'react';
 
 import { ErrorModal, LoadingSpinner, UsersList } from '../../../components';
+import { useHttpClient } from '../../../components/shared/hooks/http-hook';
 import { BASE_URL } from '../../../components/shared/util/urls';
 
 const Users = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+
   const [fetchedUsers, setFetchedUsers] = useState(null);
 
   useEffect(() => {
     // can't use async/await directly for useEffect function, need to define separate function
 
-    const sendRequest = async () => {
-      setIsLoading(true);
-
+    const fetchUsers = async () => {
       try {
-        const response = await fetch(BASE_URL + '/users');
-        const data = await response.json();
+        const responseData = await sendRequest(BASE_URL + '/users');
 
-        if (!response.ok) {
-          // a response is returned but there is an error
-          throw new Error(data.message);
-        }
-
-        setFetchedUsers(data.users); // returns an array of user objects
-        setIsLoading(false);
+        setFetchedUsers(responseData.users); // returns an array of user objects
       } catch (error) {
-        setError(error.message);
+        console.log(error); //proper error handling done in custom http-hook
       }
-      setIsLoading(false);
     };
-    sendRequest();
-  }, []);
-
-  const clearError = () => {
-    setError(null);
-  };
+    fetchUsers();
+  }, [sendRequest]);
 
   return (
     <React.Fragment>
