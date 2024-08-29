@@ -16,7 +16,6 @@ const loadScript = (url) => {
 
 const Map = ({ className, style, center, zoom }) => {
   const mapRef = useRef();
-
   const initializeMap = useCallback(() => {
     if (mapRef.current && window.google && window.google.maps) {
       // Ensure lat and lng are numbers
@@ -30,12 +29,12 @@ const Map = ({ className, style, center, zoom }) => {
         zoom: zoom,
       });
 
-      console.log(
-        'Map initialized with center:',
-        validCenter,
-        'and zoom:',
-        zoom
-      );
+      // console.log(
+      //   'Map initialized with center:',
+      //   validCenter,
+      //   'and zoom:',
+      //   zoom
+      // );
 
       // Check if AdvancedMarkerElement is available
       if (
