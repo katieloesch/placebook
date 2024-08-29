@@ -23,15 +23,23 @@ export const useHttpClient = () => {
 
         const data = await response.json();
 
+        activeHttpRequests.current = activeHttpRequests.current.filter(
+          (requestController) => requestController !== httpAbortController
+        );
+
         if (!response.ok) {
           // a response is sent back but there is an error
           throw new Error(data.message);
         }
+        setIsLoading(false);
+
         return data;
       } catch (error) {
         setError(error.message);
+        setIsLoading(false);
+
+        throw error;
       }
-      setIsLoading(false);
     },
     []
   );

@@ -13,6 +13,7 @@ import {
   VALIDATOR_REQUIRE,
 } from '../../../components/shared/util/validators';
 import { useForm } from '../../../components/shared/hooks/form-hook';
+import { useHttpClient } from '../../../components/shared/hooks/http-hook';
 import { AuthContext } from '../../../components/shared/context/authContext';
 import { BASE_URL } from '../../../components/shared/util/urls';
 import './Auth.scss';
@@ -21,8 +22,7 @@ const Auth = () => {
   const auth = useContext(AuthContext);
 
   const [userRegistered, setUserRegistered] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -61,66 +61,44 @@ const Auth = () => {
 
   const authSubmitHandler = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
 
     if (userRegistered) {
       try {
-        const response = await fetch(BASE_URL + '/users/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
+        await sendRequest(
+          BASE_URL + '/users/login',
+          'POST',
+          JSON.stringify({
             email: formState.inputs.email.value,
             password: formState.inputs.password.value,
           }),
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-          // a response is sent back but there is an error
-          throw new Error(data.message);
-        }
-
-        setIsLoading(false);
+          {
+            'Content-Type': 'application/json',
+          }
+        );
         auth.login();
       } catch (error) {
-        setIsLoading(false);
-        setError(error.message || 'Something went wrong, please try again.');
+        console.log(error); //proper error handling done in custom http-hook
       }
     } else {
       try {
-        const response = await fetch(BASE_URL + '/users/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
+        await sendRequest(
+          BASE_URL + '/users/signup',
+          'POST',
+          JSON.stringify({
             name: formState.inputs.name.value,
             email: formState.inputs.email.value,
             password: formState.inputs.password.value,
           }),
-        });
+          {
+            'Content-Type': 'application/json',
+          }
+        );
 
-        const data = await response.json();
-
-        if (!response.ok) {
-          // a response is sent back but there is an error
-          throw new Error(data.message);
-        }
-
-        setIsLoading(false);
         auth.login();
       } catch (error) {
-        setIsLoading(false);
-        setError(error.message || 'Something went wrong, please try again.');
+        console.log(error); //proper error handling done in custom http-hook
       }
     }
-  };
-
-  const clearError = () => {
-    setError(null);
   };
 
   return (
