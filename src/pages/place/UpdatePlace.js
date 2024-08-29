@@ -1,73 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { useForm } from '../../components/shared/hooks/form-hook';
-import { Card, FormBtn, FormInput } from '../../components';
+import {
+  Card,
+  ErrorModal,
+  FormBtn,
+  FormInput,
+  LoadingSpinner,
+} from '../../components';
 import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from '../../components/shared/util/validators';
+import { useHttpClient } from '../../components/shared/hooks/http-hook';
+import { AuthContext } from '../../components/shared/context/authContext';
+import { BASE_URL } from '../../components/shared/util/urls';
 import './PlaceForm.scss';
 
-const DUMMY_PLACES = [
-  {
-    id: 'p0',
-    title: 'Camden Head',
-    description: 'best hunting ground for reindeer enthusiasts',
-    imgUrl:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRh0g9I_ZYibJtTuldCxDJBGB0r7-TiU2EeA&s',
-    address: '100 Camden High St, London NW1 0LU',
-    coordinates: {
-      lat: 51.536388,
-      lng: -0.140556,
-    },
-    creator: 'u0',
-  },
-  {
-    id: 'p1',
-    title: 'Camden Head',
-    description: 'best hunting ground for reindeer enthusiasts',
-    imgUrl:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRh0g9I_ZYibJtTuldCxDJBGB0r7-TiU2EeA&s',
-    address: '100 Camden High St, London NW1 0LU',
-    coordinates: {
-      lat: 51.536388,
-      lng: -0.140556,
-    },
-    creator: 'u1',
-  },
-  {
-    id: 'p2',
-    title: 'Empire State Building',
-    description: 'One of the most famous sky scrapers in the world!',
-    imgUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
-    address: '20 W 34th St, New York, NY 10001',
-    location: {
-      lat: 40.7484405,
-      lng: -73.9878584,
-    },
-    creator: 'u0',
-  },
-  {
-    id: 'p3',
-    title: 'Empire State Building',
-    description: 'One of the most famous sky scrapers in the world!',
-    imgUrl:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NYC_Empire_State_Building.jpg/640px-NYC_Empire_State_Building.jpg',
-    address: '20 W 34th St, New York, NY 10001',
-    location: {
-      lat: 40.7484405,
-      lng: -73.9878584,
-    },
-    creator: 'u1',
-  },
-];
-
 const UpdatePlace = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const auth = useContext(AuthContext);
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const [fetchedPlace, setFetchedPlace] = useState(null);
   const params = useParams();
   const placeId = params.placeId;
+  const navigate = useNavigate();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -83,34 +40,64 @@ const UpdatePlace = () => {
     false
   );
 
-  const placeToUpdate = DUMMY_PLACES.find((place) => place.id === placeId);
-
   useEffect(() => {
-    if (placeToUpdate) {
-      setFormData(
-        {
-          title: {
-            value: placeToUpdate.title,
-            isValid: true,
-          },
-          description: {
-            value: placeToUpdate.description,
-            isValid: true,
-          },
-        },
-        true
-      );
-    }
+    // can't use async/await directly for useEffect function, need to define separate function
 
-    setIsLoading(false);
-  }, [setFormData, placeToUpdate]);
+    const fetchPlace = async () => {
+      try {
+        const url = `${BASE_URL}/places/${placeId}`;
+        const responseData = await sendRequest(url);
+        setFetchedPlace(responseData.place);
 
-  const submitUpdateForm = (e) => {
+        setFormData(
+          {
+            title: {
+              value: responseData.place.title,
+              isValid: true,
+            },
+            description: {
+              value: responseData.place.description,
+              isValid: true,
+            },
+          },
+          true
+        );
+      } catch (error) {
+        console.log(error); //proper error handling done in custom http-hook
+      }
+    };
+    fetchPlace();
+  }, [sendRequest, placeId, setFormData]);
+
+  const submitUpdateForm = async (e) => {
     e.preventDefault();
-    console.log(formState.inputs);
+    try {
+      const url = `${BASE_URL}/places/${placeId}`;
+
+      await sendRequest(
+        url,
+        'PATCH',
+        JSON.stringify({
+          title: formState.inputs.title.value,
+          description: formState.inputs.description.value,
+        }),
+        { 'Content-Type': 'application/json' }
+      );
+
+      navigate(`/${auth.userId}/places`);
+    } catch (error) {
+      console.log(error); //proper error handling done in custom http-hook
+    }
   };
 
-  if (!placeToUpdate) {
+  if (isLoading) {
+    return (
+      <div className='center'>
+        <LoadingSpinner />
+      </div>
+    );
+  }
+  if (!fetchedPlace && !error) {
     return (
       <div className='center'>
         <Card>
@@ -120,43 +107,40 @@ const UpdatePlace = () => {
     );
   }
 
-  if (isLoading) {
-    return (
-      <div className='center'>
-        <h2>Loading...</h2>
-      </div>
-    );
-  }
-
   return (
-    <form className='place-form' onSubmit={submitUpdateForm}>
-      <h2>Update Place</h2>
-      <FormInput
-        id='title'
-        element='input'
-        type='text'
-        label='Title'
-        validators={[VALIDATOR_REQUIRE()]}
-        errorMsg='Please enter a valid title.'
-        onInput={inputHandler}
-        initialValue={formState.inputs.title.value}
-        initialValid={formState.inputs.title.isValid}
-      />
-      <FormInput
-        id='description'
-        element='textarea'
-        type='text'
-        label='Description'
-        validators={[VALIDATOR_MINLENGTH(5)]}
-        errorMsg='Please enter a valid description (min 5 characters).'
-        onInput={inputHandler}
-        initialValue={formState.inputs.description.value}
-        initialValid={formState.inputs.description.isValid}
-      />
-      <FormBtn type='submit' disabled={!formState.isValid}>
-        update Place
-      </FormBtn>
-    </form>
+    <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
+      {!isLoading && fetchedPlace && (
+        <form className='place-form' onSubmit={submitUpdateForm}>
+          <h2>Update Place</h2>
+          <FormInput
+            id='title'
+            element='input'
+            type='text'
+            label='Title'
+            validators={[VALIDATOR_REQUIRE()]}
+            errorMsg='Please enter a valid title.'
+            onInput={inputHandler}
+            initialValue={fetchedPlace.title}
+            initialValid={true}
+          />
+          <FormInput
+            id='description'
+            element='textarea'
+            type='text'
+            label='Description'
+            validators={[VALIDATOR_MINLENGTH(5)]}
+            errorMsg='Please enter a valid description (min 5 characters).'
+            onInput={inputHandler}
+            initialValue={fetchedPlace.description}
+            initialValid={true}
+          />
+          <FormBtn type='submit' disabled={!formState.isValid}>
+            update Place
+          </FormBtn>
+        </form>
+      )}
+    </React.Fragment>
   );
 };
 
