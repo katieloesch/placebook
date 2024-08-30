@@ -5,8 +5,10 @@ import {
   ErrorModal,
   FormBtn,
   FormInput,
+  FormImgUpload,
   LoadingSpinner,
 } from '../../../components';
+
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
@@ -15,7 +17,7 @@ import {
 import { useForm } from '../../../components/shared/hooks/form-hook';
 import { useHttpClient } from '../../../components/shared/hooks/http-hook';
 import { AuthContext } from '../../../components/shared/context/authContext';
-import { BASE_URL } from '../../../components/shared/util/urls';
+import { API_BASE_URL } from '../../../components/shared/util/urls';
 import './Auth.scss';
 
 const Auth = () => {
@@ -41,7 +43,7 @@ const Auth = () => {
   const switchAuthMode = () => {
     if (!userRegistered) {
       setFormData(
-        { ...formState.inputs, name: undefined },
+        { ...formState.inputs, name: undefined, image: undefined },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
     } else {
@@ -50,6 +52,10 @@ const Auth = () => {
           ...formState.inputs,
           name: {
             value: '',
+            isValid: false,
+          },
+          image: {
+            value: null,
             isValid: false,
           },
         },
@@ -65,7 +71,7 @@ const Auth = () => {
     if (userRegistered) {
       try {
         const responseData = await sendRequest(
-          BASE_URL + '/users/login',
+          API_BASE_URL + '/users/login',
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -81,17 +87,16 @@ const Auth = () => {
       }
     } else {
       try {
+        // use FormData built-in browser API
+        const formData = new FormData();
+        formData.append('email', formState.inputs.email.value);
+        formData.append('name', formState.inputs.name.value);
+        formData.append('password', formState.inputs.password.value);
+        formData.append('image', formState.inputs.image.value);
         const responseData = await sendRequest(
-          BASE_URL + '/users/signup',
+          API_BASE_URL + '/users/signup',
           'POST',
-          JSON.stringify({
-            name: formState.inputs.name.value,
-            email: formState.inputs.email.value,
-            password: formState.inputs.password.value,
-          }),
-          {
-            'Content-Type': 'application/json',
-          }
+          formData
         );
 
         auth.login(responseData.user.id);
@@ -119,6 +124,7 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
+
           <FormInput
             element='input'
             id='email'
@@ -138,6 +144,15 @@ const Auth = () => {
             errorMsg='Please enter a valid email password (min 6 characters).'
             onInput={inputHandler}
           />
+
+          {!userRegistered && (
+            <FormImgUpload
+              center
+              id='image'
+              onInput={inputHandler}
+              errorText='Please provide an image.'
+            />
+          )}
 
           <FormBtn type='submit' disabled={!formState.isValid}>
             {userRegistered ? 'Login' : 'Sign Up'}

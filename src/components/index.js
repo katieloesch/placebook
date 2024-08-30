@@ -26,3 +26,4 @@ export { default as Map } from './shared/UIElements/Map/Map';
 // form elements
 export { default as FormBtn } from './shared/FormElements/FormBtn';
 export { default as FormInput } from './shared/FormElements/FormInput';
+export { default as FormImgUpload } from './shared/FormElements/FormImgUpload';
