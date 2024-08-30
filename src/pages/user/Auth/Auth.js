@@ -134,8 +134,8 @@ const Auth = () => {
             id='password'
             type='password'
             label='password'
-            validators={[VALIDATOR_MINLENGTH(5)]}
-            errorMsg='Please enter a valid email password (min 5 characters).'
+            validators={[VALIDATOR_MINLENGTH(6)]}
+            errorMsg='Please enter a valid email password (min 6 characters).'
             onInput={inputHandler}
           />
 
