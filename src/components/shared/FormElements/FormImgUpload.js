@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import FormBtn from './FormBtn';
-import { icons } from '../../../assets/icons';
+// import { icons } from '../../../assets/icons';
 import './FormImgUpload.scss';
 
 const FormImgUpload = ({ id, center, onInput, errorText }) => {
