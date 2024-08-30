@@ -1,7 +1,7 @@
 # PlaceBook
 
-<img src="" alt="" width="250">
-image source: []()
+<!-- <img src="" alt="" width="250">
+image source: []() -->
 
 ## Overview
 
@@ -20,17 +20,15 @@ image source: []()
 
 ## <a name="description"></a> 1. Description
 
-<img src="" alt="" width="250">
+<!-- <img src="" alt="" width="250">
 
-image source: []()
+image source: []() -->
 
 ## <a name="deployment-link"></a> 2. Deployment Link
 
 ## <a name="installation"></a> 3. Installation
 
 ## <a name="technologies"></a> 4. Technologies Used
-
-### Core Technologies
 
 ### Core Technologies
 
@@ -65,9 +63,85 @@ This application was built using the `MERN stack`, an open source–centric coll
     - <sub> [website](https://mongoosejs.com/)</sub>
     - <sub>[mongoDB](https://www.mongodb.com/developer/languages/javascript/getting-started-with-mongodb-and-mongoose/)</sub>
 
-### Key Dependencies - FrontEnd
+### Key Dependencies - Frontend
+
+- **react-router-dom** (v6.24.0)
+  - <sub>An implementation of react-router that includes additional components for browser-based routing</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/react-router-dom)</sub>
+  - <sub>[GitHub repository](https://github.com/remix-run/react-router)</sub>
+  - <sub> [website](https://reactrouter.com/en/main)</sub>
+- **react-transition-group** (v4.4.5)
+  - <sub>A library for handling animations and transitions in React applications</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/react-transition-group)</sub>
+  - <sub>[GitHub repository](https://github.com/reactjs/react-transition-group)</sub>
+  - <sub> [website](https://reactcommunity.org/react-transition-group/)</sub>
+- **sass** (v1.77.8)
+  - <sub>A CSS preprocessor used for styling the application</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/sass)</sub>
+  - <sub>[GitHub repository](https://github.com/sass/dart-sass)</sub>
 
 ### Key Dependencies - Backend
+
+- **axios** (v1.7.4)
+  - <sub>A promise-based HTTP client for Node.js and the browser that simplifies making asynchronous HTTP requests to REST endpoints.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/axios)</sub>
+  - <sub>[GitHub repository](https://github.com/axios/axios)</sub>
+  - <sub> [website](https://axios-http.com/)</sub>
+- **body-parser** (v1.20.2)
+  - <sub>A Node.js body parsing middleware, supporting JSON and URL-encoded data.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/body-parser)</sub>
+  - <sub>[GitHub repository](https://github.com/expressjs/body-parser)</sub>
+- **dotenv** (v16.4.5)
+
+  - <sub>A zero-dependency module that loads environment variables from a .env file into process.env, allowing secure configuration settings management.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/dotenv)</sub>
+  - <sub>[GitHub repository](https://github.com/motdotla/dotenv)</sub>
+  - <sub> [website](https://dotenvx.com/)</sub>
+
+- **express** (v4.19.2)
+
+  - <sub>A fast and minimalist web framework for Node.js, used to build web applications and APIs.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/express)</sub>
+  - <sub>[GitHub repository](https://github.com/expressjs/express)</sub>
+  - <sub> [website](https://expressjs.com/)</sub>
+
+- **express-validator** (v7.2.0)
+
+  - <sub>A set of express.js middleware functions that offer a way to validate and sanitise input data, helping to prevent common security vulnerabilities.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/express-validator)</sub>
+  - <sub>[GitHub repository](https://github.com/express-validator/express-validator)</sub>
+  - <sub> [website](https://express-validator.github.io/docs)</sub>
+
+- **mongoose** (v8.5.3)
+
+  - <sub>A MongoDB object modeling tool designed to work in an asynchronous environment, providing schema-based solutions to model data in a MongoDB database.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/mongoose)</sub>
+  - <sub>[GitHub repository](https://github.com/Automattic/mongoose)</sub>
+  - <sub> [website](https://mongoosejs.com/)</sub>
+
+- **mongoose-unique-validator** (v5.0.1)
+
+  - <sub>A Mongoose plugin that adds pre-save validation for unique fields within a Mongoose schema, ensuring unique constraints are respected.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/mongoose-unique-validator)</sub>
+  - <sub>[GitHub repository](https://github.com/mongoose-unique-validator/mongoose-unique-validator)</sub>
+
+- **multer** (v1.4.5-lts.1)
+
+  - <sub>A middleware for handling multipart/form-data, commonly used for uploading files in Express.js applications.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/multer)</sub>
+  - <sub>[GitHub repository](https://github.com/expressjs/multer)</sub>
+
+- **nodemon** (v3.1.4)
+
+  - <sub> A utility that automatically restarts your Node.js server when files change, making development faster and more efficient.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/nodemon)</sub>
+  - <sub>[GitHub repository](https://github.com/remy/nodemon)</sub>
+  - <sub>[website](https://nodemon.io/)</sub>
+
+- **uuid** (v10.0.0)
+  - <sub> A library that generates RFC-compliant universally unique identifiers (UUIDs) for use in various applications where unique identification is required.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/uuid)</sub>
+  - <sub>[GitHub repository](https://github.com/uuidjs/uuid)</sub>
 
 ### UI and Design
 
@@ -87,45 +161,66 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### Development Tools
 
+### Development Tools
+
+- **Git / GitHub**
+  - <sub>used for version control and collaboration</sub>
+  - <sub>[Git website](https://git-scm.com/)</sub>
+  - <sub>[GitHub website](https://github.com/)</sub>
+- **Visual Studio Code (VSCode)**
+  - <sub>code editor used for development</sub>
+  - <sub>[website](https://code.visualstudio.com/)</sub>
+  - <sub>[GitHub repository](https://github.com/microsoft/vscode)</sub>
+- **Google Chrome & Chrome DevTools**
+  - <sub>used for testing, debugging, and developing in the browser</sub>
+  - <sub>[Google Chrome website](https://www.google.com/chrome/)</sub>
+  - <sub>[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools)</sub>
+- **Excalidraw**
+  - <sub>tool used to create wireframes for the application</sub>
+  - <sub>[website](https://excalidraw.com/)</sub>
+  - <sub>[GitHub repository](https://github.com/excalidraw/excalidraw)</sub>
+- **ChatGPT4o**:
+  - <sub>generative AI tool used for debugging and development support</sub>
+  - <sub>[website](https://chat.openai.com/)</sub>
+  - <sub>[GitHub repository](https://github.com/openai)</sub>
+- **Hostinger**:
+  - <sub>web hosting provider used to deploy the application</sub>
+  - <sub>[UK website](https://www.hostinger.co.uk)</sub>
+
 ### Resources and tutorials
+
+- **Documentation**
+  - <sub>[axios](https://axios-http.com/docs/intro)</sub>
+- **Udemy**
+
+  - <sub>[React, NodeJS, Express & MongoDB - The MERN Fullstack Guide]() by [Manuel Lorenz](https://www.udemy.com/user/manuel-lorenz/) & [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
+
+  - <sub>[React - The Complete Guide 2024 (incl. Next.js, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595350?start=0#overview) by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
+  - <sub>[MERN 2024 Edition - MongoDB, Express, React and NodeJS](https://www.udemy.com/course/mern-stack-course-mongodb-express-react-and-nodejs/) by [John Smilga](https://www.udemy.com/user/janis-smilga-3/)</sub>
+  - <sub>[The Complete Node.js Developer Course (3rd Edition)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/) by [Andrew Mead](https://www.udemy.com/user/andrewmead/) & [Rob Percival](https://www.udemy.com/user/robpercival/)</sub>
 
 ## <a name="deliverables"></a> 5. Deliverables
 
+<!--
 ### MVP
 
 ### Potential Extra Features / Stretch Goals
 
-### User Stories
+### User Stories -->
 
 ## <a name="planning"></a> 6. Planning & Build Process
 
-bronze plan | silver plan | gold plan
+<!-- bronze plan | silver plan | gold plan
 
-<img src="" alt="wireframe" width="250">
+<img src="" alt="wireframe" width="250"> -->
 
 ## <a name="challenges"></a> 7. Challenges
 
--
--
--
-
 ## <a name="wins"></a> 8. Wins
-
--
--
--
 
 ## <a name="takeaways"></a> 9. Key Learnings & Takeaways
 
--
--
--
-
 ## <a name="future-improvements"></a> 10. Future Improvements
-
--
--
--
 
 <!--
 
