@@ -5,8 +5,10 @@ import {
   ErrorModal,
   FormBtn,
   FormInput,
+  FormImgUpload,
   LoadingSpinner,
 } from '../../../components';
+
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
@@ -119,6 +121,7 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
+          {!userRegistered && <FormImgUpload center id='image' />}
           <FormInput
             element='input'
             id='email'

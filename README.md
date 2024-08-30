@@ -6,6 +6,10 @@
 - react-router-dom (v6.24.0)
 - react-transition-group (v4.4.5)
 
+UI:
+iconify
+fontawesome
+
 <!--
 
 
