@@ -1,6 +1,6 @@
-import user from './user1.svg';
-import user2 from './user2.svg';
-import user3 from './user3.svg';
+import userIcon from './user1.svg';
+import userIcon2 from './user2.svg';
+import userIcon3 from './user3.svg';
 
 // export const userIcon = {
 //   svg: (
@@ -24,16 +24,6 @@ import user3 from './user3.svg';
 //   format: 'svg',
 // };
 
-export const userIcon = {
-  svg: user,
-  url: 'https://icon-sets.iconify.design/ph/user-bold/',
-  source: 'iconify.design',
-  alt: 'user avatar icon',
-  className: 'icon-user',
-  license: 'https://github.com/iconify/iconify/blob/main/license.txt',
-  format: 'svg',
-};
-
 // export const userIcon2 = {
 //   svg: (
 //     <svg
@@ -56,8 +46,18 @@ export const userIcon = {
 //   format: 'svg',
 // };
 
-export const userIcon2 = {
-  svg: user2,
+const user = {
+  svg: userIcon,
+  url: 'https://icon-sets.iconify.design/ph/user-bold/',
+  source: 'iconify.design',
+  alt: 'user avatar icon',
+  className: 'icon-user',
+  license: 'https://github.com/iconify/iconify/blob/main/license.txt',
+  format: 'svg',
+};
+
+const user2 = {
+  svg: userIcon2,
   url: 'https://icon-sets.iconify.design/ph/user/',
   source: 'iconify.design',
   alt: 'user avatar icon',
@@ -66,8 +66,8 @@ export const userIcon2 = {
   format: 'svg',
 };
 
-export const userIcon3 = {
-  svg: user3,
+const user3 = {
+  svg: userIcon3,
   url: 'https://fontawesome.com/icons/user?f=classic&s=solid',
   source: 'FontAwesome',
   alt: 'user avatar icon',
@@ -76,7 +76,7 @@ export const userIcon3 = {
   format: 'svg',
 };
 
-export const locationIcon = {
+const location = {
   svg: (
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'>
       <path d='M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z' />
@@ -89,3 +89,12 @@ export const locationIcon = {
   license: 'https://fontawesome.com/license/free',
   format: 'svg',
 };
+
+const icons = {
+  user,
+  user2,
+  user3,
+  location,
+};
+
+export default icons;

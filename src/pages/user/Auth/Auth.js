@@ -43,7 +43,7 @@ const Auth = () => {
   const switchAuthMode = () => {
     if (!userRegistered) {
       setFormData(
-        { ...formState.inputs, name: undefined },
+        { ...formState.inputs, name: undefined, image: undefined },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
     } else {
@@ -52,6 +52,10 @@ const Auth = () => {
           ...formState.inputs,
           name: {
             value: '',
+            isValid: false,
+          },
+          image: {
+            value: null,
             isValid: false,
           },
         },
@@ -121,7 +125,9 @@ const Auth = () => {
               onInput={inputHandler}
             />
           )}
-          {!userRegistered && <FormImgUpload center id='image' />}
+          {!userRegistered && (
+            <FormImgUpload center id='image' onInput={inputHandler} />
+          )}
           <FormInput
             element='input'
             id='email'
