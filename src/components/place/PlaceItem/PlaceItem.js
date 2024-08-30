@@ -1,10 +1,29 @@
 import React, { useContext, useState } from 'react';
 
-import { Card, FormBtn, Map, Modal } from '../../../components';
+import {
+  Card,
+  ErrorModal,
+  FormBtn,
+  LoadingSpinner,
+  Map,
+  Modal,
+} from '../../../components';
 import { AuthContext } from '../../shared/context/authContext';
+import { useHttpClient } from '../../shared/hooks/http-hook';
+import { BASE_URL } from '../../shared/util/urls';
 import './PlaceItem.scss';
 
-const PlaceItem = ({ img, title, address, description, id, coordinates }) => {
+const PlaceItem = ({
+  img,
+  title,
+  address,
+  description,
+  id,
+  coordinates,
+  onDelete,
+}) => {
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+
   const auth = useContext(AuthContext);
   const [showMap, setShowMap] = useState(false);
   const [showModalDelete, setShowModalDelete] = useState(false);
@@ -25,13 +44,21 @@ const PlaceItem = ({ img, title, address, description, id, coordinates }) => {
     setShowModalDelete(false);
   };
 
-  const deletePlace = () => {
+  const deletePlace = async () => {
     setShowModalDelete(false);
-    console.log('request to server to delete item...');
+
+    try {
+      const url = `${BASE_URL}/places/${id}`;
+      await sendRequest(url, 'DELETE');
+      onDelete(id);
+    } catch (error) {
+      console.log(error); //proper error handling done in custom http-hook
+    }
   };
 
   return (
     <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
       <Modal
         show={showMap}
         onCancel={closeMap}
@@ -70,6 +97,7 @@ const PlaceItem = ({ img, title, address, description, id, coordinates }) => {
 
       <li className='place-item'>
         <Card className='place-item__content'>
+          {isLoading && <LoadingSpinner asOverlay />}
           <div className='place-item__img'>
             <img src={img} alt={title} />
           </div>
