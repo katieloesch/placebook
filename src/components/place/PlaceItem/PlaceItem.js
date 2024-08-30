@@ -21,6 +21,7 @@ const PlaceItem = ({
   id,
   coordinates,
   onDelete,
+  creatorId,
 }) => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
 
@@ -110,8 +111,10 @@ const PlaceItem = ({
             <FormBtn inverse onClick={openMap}>
               view on map
             </FormBtn>
-            {auth.isLoggedIn && <FormBtn to={`/places/${id}`}>edit</FormBtn>}
-            {auth.isLoggedIn && (
+            {auth.userId === creatorId && (
+              <FormBtn to={`/places/${id}`}>edit</FormBtn>
+            )}
+            {auth.userId === creatorId && (
               <FormBtn danger onClick={openModalDelete}>
                 delete
               </FormBtn>
