@@ -15,7 +15,7 @@ import {
 } from '../../components/shared/util/validators';
 import { useHttpClient } from '../../components/shared/hooks/http-hook';
 import { AuthContext } from '../../components/shared/context/authContext';
-import { BASE_URL } from '../../components/shared/util/urls';
+import { API_BASE_URL } from '../../components/shared/util/urls';
 import './PlaceForm.scss';
 
 const UpdatePlace = () => {
@@ -45,7 +45,7 @@ const UpdatePlace = () => {
 
     const fetchPlace = async () => {
       try {
-        const url = `${BASE_URL}/places/${placeId}`;
+        const url = `${API_BASE_URL}/places/${placeId}`;
         const responseData = await sendRequest(url);
         setFetchedPlace(responseData.place);
 
@@ -72,7 +72,7 @@ const UpdatePlace = () => {
   const submitUpdateForm = async (e) => {
     e.preventDefault();
     try {
-      const url = `${BASE_URL}/places/${placeId}`;
+      const url = `${API_BASE_URL}/places/${placeId}`;
 
       await sendRequest(
         url,

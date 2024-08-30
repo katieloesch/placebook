@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import { ErrorModal, LoadingSpinner, UsersList } from '../../../components';
 import { useHttpClient } from '../../../components/shared/hooks/http-hook';
-import { BASE_URL } from '../../../components/shared/util/urls';
+import { API_BASE_URL } from '../../../components/shared/util/urls';
 
 const Users = () => {
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
@@ -14,7 +14,7 @@ const Users = () => {
 
     const fetchUsers = async () => {
       try {
-        const responseData = await sendRequest(BASE_URL + '/users');
+        const responseData = await sendRequest(API_BASE_URL + '/users');
 
         setFetchedUsers(responseData.users); // returns an array of user objects
       } catch (error) {
