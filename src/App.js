@@ -11,22 +11,22 @@ import { Auth, NewPlace, UpdatePlace, UserPlaces, Users } from './pages';
 import { AuthContext } from './components/shared/context/authContext';
 
 function App() {
-  const [isLoggedIn, setIsloggedIn] = useState(false);
+  const [token, setToken] = useState(null);
   const [userId, setUserId] = useState(null);
 
-  const login = useCallback((uid) => {
-    setIsloggedIn(true);
-    setUserId(uid);
+  const login = useCallback((userId, token) => {
+    setToken(token);
+    setUserId(userId);
   }, []);
 
   const logout = useCallback(() => {
-    setIsloggedIn(false);
+    setToken(null);
     setUserId(null);
   }, []);
 
   let routes;
 
-  if (isLoggedIn) {
+  if (token) {
     routes = (
       <Routes>
         <Route path='/' exact element={<Users />}></Route>
@@ -50,7 +50,8 @@ function App() {
   return (
     <AuthContext.Provider
       value={{
-        isLoggedIn: isLoggedIn,
+        isLoggedIn: !!token,
+        token: token,
         userId: userId,
         login: login,
         logout: logout,

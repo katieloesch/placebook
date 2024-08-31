@@ -57,7 +57,9 @@ const NewPlace = () => {
       formData.append('creator', auth.userId);
       formData.append('image', formState.inputs.image.value);
 
-      await sendRequest(API_BASE_URL + '/places', 'POST', formData);
+      await sendRequest(API_BASE_URL + '/places', 'POST', formData, {
+        Authorization: 'Bearer ' + auth.token,
+      });
       navigate('/');
     } catch (error) {
       console.log(error); //proper error handling done in custom http-hook

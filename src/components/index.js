@@ -24,6 +24,6 @@ export { default as Modal } from './shared/UIElements/Modal/Modal';
 export { default as Map } from './shared/UIElements/Map/Map';
 
 // form elements
-export { default as FormBtn } from './shared/FormElements/FormBtn';
-export { default as FormInput } from './shared/FormElements/FormInput';
-export { default as FormImgUpload } from './shared/FormElements/FormImgUpload';
+export { default as FormBtn } from './shared/FormElements/FormBtn/FormBtn';
+export { default as FormInput } from './shared/FormElements/FormInput/FormInput';
+export { default as FormImgUpload } from './shared/FormElements/FormImgUpload/FormImgUpload';

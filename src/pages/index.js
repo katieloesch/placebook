@@ -1,4 +1,4 @@
-// user pages
+// user/auth pages
 export { default as Users } from './user/Users/Users';
 export { default as Auth } from './user/Auth/Auth';
 
