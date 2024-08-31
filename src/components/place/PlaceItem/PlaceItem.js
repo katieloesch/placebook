@@ -50,7 +50,10 @@ const PlaceItem = ({
 
     try {
       const url = `${API_BASE_URL}/places/${id}`;
-      await sendRequest(url, 'DELETE');
+      await sendRequest(url, 'DELETE', null, {
+        // no body required as it is a DELETE request
+        Authorization: 'Bearer ' + auth.token,
+      });
       onDelete(id);
     } catch (error) {
       console.log(error); //proper error handling done in custom http-hook
