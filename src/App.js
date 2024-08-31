@@ -10,8 +10,11 @@ import { NavMain } from './components';
 import { Auth, NewPlace, UpdatePlace, UserPlaces, Users } from './pages';
 import { AuthContext } from './components/shared/context/authContext';
 
+let logoutTimer;
+
 function App() {
   const [token, setToken] = useState(null);
+  const [tokenExpirationDate, setTokenExpirationDate] = useState(null);
   const [userId, setUserId] = useState(null);
 
   const login = useCallback((userId, token, expirationDate) => {
@@ -21,6 +24,7 @@ function App() {
     // token expires in 1hr -> on login: current time + 1h
     const tokenExpiration =
       expirationDate || new Date(new Date().getTime() + 1000 * 60 * 60);
+    setTokenExpirationDate(tokenExpiration);
 
     localStorage.setItem(
       'userData',
@@ -34,9 +38,21 @@ function App() {
 
   const logout = useCallback(() => {
     setToken(null);
+    setTokenExpirationDate(null);
     setUserId(null);
     localStorage.removeItem('userData');
   }, []);
+
+  useEffect(() => {
+    if (token && tokenExpirationDate) {
+      const remainingTime =
+        tokenExpirationDate.getTime() - new Date().getTime();
+
+      logoutTimer = setTimeout(logout, remainingTime);
+    } else {
+      clearTimeout(logoutTimer);
+    }
+  }, [token, logout, tokenExpirationDate]);
 
   useEffect(() => {
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
