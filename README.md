@@ -28,10 +28,10 @@ image source: []() -->
 
 :link:&nbsp; https://placebook.katieloesch.co.uk/
 
-backend repository:
+backend repository:<br>
 :link:&nbsp; https://github.com/katieloesch/placebook-backend
 
-backend deployment link:
+backend deployment link:<br>
 :link:&nbsp; https://placebook-015dbd92649b.herokuapp.com/
 
 ## <a name="installation"></a> 3. Installation
@@ -221,7 +221,17 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 <!-- bronze plan | silver plan | gold plan
 
-<img src="" alt="wireframe" width="250"> -->
+
+
+-->
+
+### wireframe
+
+<img src="./src/assets/images/wireframe.png" alt="wireframe" width="500">
+
+### ERD
+
+<img src="./src/assets/images/erd.png" alt="erd" width="250">
 
 ## <a name="challenges"></a> 7. Challenges
 
