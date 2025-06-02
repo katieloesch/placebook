@@ -28,11 +28,7 @@ image source: []() -->
 
 :link:&nbsp; https://placebook.katieloesch.co.uk/
 
-backend repository:<br>
-:link:&nbsp; https://github.com/katieloesch/placebook-backend
-
-backend deployment link:<br>
-:link:&nbsp; https://placebook-015dbd92649b.herokuapp.com/
+backend repository - https://github.com/katieloesch/placebook-backend
 
 ## <a name="installation"></a> 3. Installation
 
@@ -165,34 +161,38 @@ This application was built using the `MERN stack`, an open source–centric coll
 ### Development Tools
 
 - **Git / GitHub**
-  - <sub>used for version control and collaboration</sub>
+  - <sub>Used for version control and collaboration.</sub>
   - <sub>[Git website](https://git-scm.com/)</sub>
   - <sub>[GitHub website](https://github.com/)</sub>
 - **Visual Studio Code (VSCode)**
-  - <sub>code editor used for development</sub>
+  - <sub>Code editor used for development.</sub>
   - <sub>[website](https://code.visualstudio.com/)</sub>
   - <sub>[GitHub repository](https://github.com/microsoft/vscode)</sub>
 - **Google Chrome & Chrome DevTools**
-  - <sub>used for testing, debugging, and developing in the browser</sub>
+  - <sub>Used for testing, debugging, and developing in the browser.</sub>
+  - <sub>[Google Chrome website](https://www.google.com/chrome/)</sub>
+  - <sub>[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools)</sub>
+- serve
+  - <sub>Runs a script to start a local static file server, used to preview production builds of frontend app.</sub>
   - <sub>[Google Chrome website](https://www.google.com/chrome/)</sub>
   - <sub>[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools)</sub>
 - **Excalidraw**
-  - <sub>tool used to create wireframes for the application</sub>
+  - <sub>Tool used to create wireframes for the application.</sub>
   - <sub>[website](https://excalidraw.com/)</sub>
   - <sub>[GitHub repository](https://github.com/excalidraw/excalidraw)</sub>
 - **ChatGPT4o**:
-  - <sub>generative AI tool used for debugging and development support</sub>
+  - <sub>Generative AI tool used for debugging and development support.</sub>
   - <sub>[website](https://chat.openai.com/)</sub>
   - <sub>[GitHub repository](https://github.com/openai)</sub>
 
 ### Deployment
 
 - Frontend - **Hostinger**:
-  - <sub> web hosting service that offers shared, cloud, and VPS hosting solutions for websites, domains, and custom applications</sub>
+  - <sub>Web hosting service that offers shared, cloud, and VPS hosting solutions for websites, domains, and custom applications</sub>
   - <sub>[UK website](https://www.hostinger.co.uk)</sub>
   - <sub>[US website](https://www.hostinger.com/)</sub>
 - Backend - **Heroku**:
-  - <sub>cloud platform that enables developers to build, run, and scale applications by abstracting away server infrastructure management</sub>
+  - <sub>Cloud platform that enables developers to build, run, and scale applications by abstracting away server infrastructure management</sub>
   - <sub>[website](https://www.heroku.com/)</sub>
   - <sub>[GitHub repository](https://github.com/heroku)</sub>
 
@@ -201,17 +201,48 @@ This application was built using the `MERN stack`, an open source–centric coll
 - **Documentation**
   - <sub>[axios](https://axios-http.com/docs/intro)</sub>
 - **Udemy**
-
   - <sub>[React, NodeJS, Express & MongoDB - The MERN Fullstack Guide](https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/?couponCode=OF83024F) by [Manuel Lorenz](https://www.udemy.com/user/manuel-lorenz/) & [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
-
   - <sub>[React - The Complete Guide 2024 (incl. Next.js, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595350?start=0#overview) by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
   - <sub>[MERN 2024 Edition - MongoDB, Express, React and NodeJS](https://www.udemy.com/course/mern-stack-course-mongodb-express-react-and-nodejs/) by [John Smilga](https://www.udemy.com/user/janis-smilga-3/)</sub>
   - <sub>[The Complete Node.js Developer Course (3rd Edition)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/) by [Andrew Mead](https://www.udemy.com/user/andrewmead/) & [Rob Percival](https://www.udemy.com/user/robpercival/)</sub>
 
 ## <a name="deliverables"></a> 5. Deliverables
 
-<!--
 ### MVP
+
+#### 1. Authentication & Authorization
+
+- Secure sign-up and login with JWT-based authentication
+- Password hashing
+- Role-based access control to protect user-specific data and routes
+
+#### 2. Full CRUD operations for places:
+
+- Create new places with title, description, and address
+- Upload an image associated with each place
+- Edit or delete only the user’s own places
+- View all users and their shared places
+
+#### 3. Frontend
+
+- Responsive design with a clean, intuitive layout
+- Context API for global state management
+- Custom hooks for HTTP requests and form handling
+- Real-time image preview during place creation
+- Data validation for form inputs
+- Interactive map display using Google Maps API to visualize location data
+
+#### 4. Backend
+
+- RESTful API with modular routing, structured error handling, and data validation
+- Data validation and sanitization
+- Data storage using MongoDB and hosting via MongoDB Atlas
+
+#### 5. Deployment
+
+- Independent deployment of frontend and backend
+
+<!--
 
 ### Potential Extra Features / Stretch Goals
 
@@ -227,11 +258,11 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### wireframe
 
-<img src="./src/assets/images/wireframe.png" alt="wireframe" width="500">
+<img src="./src/assets/images/wireframe.png" alt="wireframe" width="750">
 
 ### ERD
 
-<img src="./src/assets/images/erd.png" alt="erd" width="250">
+<img src="./src/assets/images/erd.png" alt="erd" width="400">
 
 ## <a name="challenges"></a> 7. Challenges
 
