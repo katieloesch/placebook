@@ -17,7 +17,7 @@ import {
 import { useForm } from '../../../components/shared/hooks/form-hook';
 import { useHttpClient } from '../../../components/shared/hooks/http-hook';
 import { AuthContext } from '../../../components/shared/context/authContext';
-import { API_BASE_URL } from '../../../components/shared/util/urls';
+// import { API_BASE_URL } from '../../../components/shared/util/urls';
 import './Auth.scss';
 
 const Auth = () => {
@@ -71,7 +71,7 @@ const Auth = () => {
     if (userRegistered) {
       try {
         const responseData = await sendRequest(
-          API_BASE_URL + '/users/login',
+          process.env.REACT_APP_API_BASE_URL + '/users/login',
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -94,7 +94,7 @@ const Auth = () => {
         formData.append('password', formState.inputs.password.value);
         formData.append('image', formState.inputs.image.value);
         const responseData = await sendRequest(
-          API_BASE_URL + '/users/signup',
+          process.env.REACT_APP_API_BASE_URL + '/users/signup',
           'POST',
           formData
         );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,10 +6,15 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { NavMain } from './components';
-import { Auth, NewPlace, UpdatePlace, UserPlaces, Users } from './pages';
+import { LoadingSpinner, NavMain } from './components';
 import { AuthContext } from './components/shared/context/authContext';
 import { useAuth } from './components/shared/hooks/auth-hook';
+
+const Users = React.lazy(() => import('./pages/user/Users/Users.js'));
+const NewPlace = React.lazy(() => import('./pages/place/NewPlace.js'));
+const UserPlaces = React.lazy(() => import('./pages/place/UserPlaces.js'));
+const UpdatePlace = React.lazy(() => import('./pages/place/UpdatePlace.js'));
+const Auth = React.lazy(() => import('./pages/user/Auth/Auth.js'));
 
 function App() {
   const { token, login, logout, userId } = useAuth();
@@ -50,7 +55,17 @@ function App() {
       <Router>
         <NavMain />
 
-        <main>{routes}</main>
+        <main>
+          <Suspense
+            fallback={
+              <div className='center'>
+                <LoadingSpinner />
+              </div>
+            }
+          >
+            {routes}
+          </Suspense>
+        </main>
       </Router>
     </AuthContext.Provider>
   );

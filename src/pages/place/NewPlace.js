@@ -15,7 +15,7 @@ import {
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from '../../components/shared/util/validators';
-import { API_BASE_URL } from '../../components/shared/util/urls';
+// import { API_BASE_URL } from '../../components/shared/util/urls';
 import './PlaceForm.scss';
 
 const NewPlace = () => {
@@ -56,9 +56,14 @@ const NewPlace = () => {
       formData.append('address', formState.inputs.address.value);
       formData.append('image', formState.inputs.image.value);
 
-      await sendRequest(API_BASE_URL + '/places', 'POST', formData, {
-        Authorization: 'Bearer ' + auth.token,
-      });
+      await sendRequest(
+        process.env.REACT_APP_API_BASE_URL + '/places',
+        'POST',
+        formData,
+        {
+          Authorization: 'Bearer ' + auth.token,
+        }
+      );
       navigate('/');
     } catch (error) {
       console.log(error); //proper error handling done in custom http-hook

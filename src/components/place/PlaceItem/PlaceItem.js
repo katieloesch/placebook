@@ -10,7 +10,7 @@ import {
 } from '../../../components';
 import { AuthContext } from '../../shared/context/authContext';
 import { useHttpClient } from '../../shared/hooks/http-hook';
-import { API_BASE_URL, BASE_URL } from '../../shared/util/urls';
+// import { API_BASE_URL, BASE_URL } from '../../shared/util/urls';
 import './PlaceItem.scss';
 
 const PlaceItem = ({
@@ -49,7 +49,7 @@ const PlaceItem = ({
     setShowModalDelete(false);
 
     try {
-      const url = `${API_BASE_URL}/places/${id}`;
+      const url = `${process.env.REACT_APP_API_BASE_URL}/places/${id}`;
       await sendRequest(url, 'DELETE', null, {
         // no body required as it is a DELETE request
         Authorization: 'Bearer ' + auth.token,
@@ -103,7 +103,7 @@ const PlaceItem = ({
         <Card className='place-item__content'>
           {isLoading && <LoadingSpinner asOverlay />}
           <div className='place-item__img'>
-            <img src={`${BASE_URL}/${img}`} alt={title} />
+            <img src={`${process.env.REACT_APP_BASE_URL}/${img}`} alt={title} />
           </div>
           <div className='place-item__info'>
             <h2>{title}</h2>

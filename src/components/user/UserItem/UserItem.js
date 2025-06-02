@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Avatar, Card } from '../../../components';
-import { BASE_URL } from '../../shared/util/urls';
+// import { BASE_URL } from '../../shared/util/urls';
 import './UserItem.scss';
 
 const UserItem = ({ id, name, placeCount, img }) => {
@@ -11,7 +11,10 @@ const UserItem = ({ id, name, placeCount, img }) => {
       <Card className={'user-item__content'}>
         <Link to={`/${id}/places`}>
           <div className='user-item__img'>
-            <Avatar img={`${BASE_URL}/${img}`} alt={name} />
+            <Avatar
+              img={`${process.env.REACT_APP_BASE_URL}/${img}`}
+              alt={name}
+            />
           </div>
           <div className='user-item__info'>
             <h2>{name}</h2>

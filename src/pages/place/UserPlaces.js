@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import { ErrorModal, LoadingSpinner, PlaceList } from '../../components';
 import { useHttpClient } from '../../components/shared/hooks/http-hook';
-import { API_BASE_URL } from '../../components/shared/util/urls';
+// import { API_BASE_URL } from '../../components/shared/util/urls';
 
 const UserPlaces = () => {
   const [fetchedPlaces, setFetchedPlaces] = useState(null);
@@ -16,7 +16,7 @@ const UserPlaces = () => {
 
     const fetchPlaces = async () => {
       try {
-        const url = `${API_BASE_URL}/places/user/${userId}`;
+        const url = `${process.env.REACT_APP_API_BASE_URL}/places/user/${userId}`;
 
         const responseData = await sendRequest(url);
         setFetchedPlaces(responseData.places);
