@@ -172,7 +172,7 @@ This application was built using the `MERN stack`, an open source–centric coll
   - <sub>Used for testing, debugging, and developing in the browser.</sub>
   - <sub>[Google Chrome website](https://www.google.com/chrome/)</sub>
   - <sub>[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools)</sub>
-- serve
+- **serve**
   - <sub>Runs a script to start a local static file server, used to preview production builds of frontend app.</sub>
   - <sub>[Google Chrome website](https://www.google.com/chrome/)</sub>
   - <sub>[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools)</sub>
@@ -187,11 +187,11 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### Deployment
 
-- Frontend - **Hostinger**:
+- Frontend - **Hostinger**
   - <sub>Web hosting service that offers shared, cloud, and VPS hosting solutions for websites, domains, and custom applications</sub>
   - <sub>[UK website](https://www.hostinger.co.uk)</sub>
   - <sub>[US website](https://www.hostinger.com/)</sub>
-- Backend - **Heroku**:
+- Backend - **Heroku**
   - <sub>Cloud platform that enables developers to build, run, and scale applications by abstracting away server infrastructure management</sub>
   - <sub>[website](https://www.heroku.com/)</sub>
   - <sub>[GitHub repository](https://github.com/heroku)</sub>
@@ -242,23 +242,46 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 - Independent deployment of frontend and backend
 
-<!--
-
 ### Potential Extra Features / Stretch Goals
 
-### User Stories -->
+- File upload for user profile picture
+- User profile page
+- Dark mode toggle
+- Pagination for places
+- Refresh token and token renewal system
+- Cloudinary or S3 for cloud image storage
+- Optimize image sizes automatically on upload
+- Unit and integration tests (e.g. Jest, React Testing Library, Supertest)
+
+### User stories
+
+#### Authentication & Access Control
+
+- As a user, I should be able to sign up with my email and password, so that I can create an account and start sharing places.
+- As a user, I should be able to log in securely, so that I can access and manage my content.
+- As a user, I should be automatically logged out when my token expires, so that my account stays secure.
+- As a user, I should only be able to access protected pages if I’m authenticated.
+
+#### Place Management
+
+- As a user, I should be able to add a new place with a title, description, address, and image, so that I can share locations I’ve visited.
+- As a user, I should be able to see the address I entered on a map.
+- As a user, I should be able to upload an image when creating a place.
+- As a user, I should be able to preview my image before uploading it.
+- As a user, I should be able to edit or delete a place, so that I can keep my content accurate and up to date.
+- As a user, I should be able to view a list of all places shared by a specific user, so that I can see what others have shared.
+
+### User Experience & Interface
+
+- As a user, I should be able to use the app comfortably on any device.
+- As a user, I should be able to see loading spinners during data fetches, so that I know the app is working.
+- As a user, I should be able to see error messages and modals when something goes wrong, so that I understand what’s happening and how to fix it.
 
 ## <a name="planning"></a> 6. Planning & Build Process
 
-<!-- bronze plan | silver plan | gold plan
-
-
-
--->
-
 ### wireframe
 
-<img src="./src/assets/images/wireframe.png" alt="wireframe" width="750">
+<img src="./src/assets/images/wireframe.png" alt="wireframe" width="800">
 
 ### ERD
 
