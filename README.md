@@ -28,11 +28,7 @@ image source: []() -->
 
 :link:&nbsp; https://placebook.katieloesch.co.uk/
 
-backend repository:
-:link:&nbsp; https://github.com/katieloesch/placebook-backend
-
-backend deployment link:
-:link:&nbsp; https://placebook-015dbd92649b.herokuapp.com/
+backend repository - https://github.com/katieloesch/placebook-backend
 
 ## <a name="installation"></a> 3. Installation
 
@@ -165,34 +161,38 @@ This application was built using the `MERN stack`, an open source–centric coll
 ### Development Tools
 
 - **Git / GitHub**
-  - <sub>used for version control and collaboration</sub>
+  - <sub>Used for version control and collaboration.</sub>
   - <sub>[Git website](https://git-scm.com/)</sub>
   - <sub>[GitHub website](https://github.com/)</sub>
 - **Visual Studio Code (VSCode)**
-  - <sub>code editor used for development</sub>
+  - <sub>Code editor used for development.</sub>
   - <sub>[website](https://code.visualstudio.com/)</sub>
   - <sub>[GitHub repository](https://github.com/microsoft/vscode)</sub>
 - **Google Chrome & Chrome DevTools**
-  - <sub>used for testing, debugging, and developing in the browser</sub>
+  - <sub>Used for testing, debugging, and developing in the browser.</sub>
+  - <sub>[Google Chrome website](https://www.google.com/chrome/)</sub>
+  - <sub>[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools)</sub>
+- **serve**
+  - <sub>Runs a script to start a local static file server, used to preview production builds of frontend app.</sub>
   - <sub>[Google Chrome website](https://www.google.com/chrome/)</sub>
   - <sub>[Chrome DevTools documentation](https://developer.chrome.com/docs/devtools)</sub>
 - **Excalidraw**
-  - <sub>tool used to create wireframes for the application</sub>
+  - <sub>Tool used to create wireframes for the application.</sub>
   - <sub>[website](https://excalidraw.com/)</sub>
   - <sub>[GitHub repository](https://github.com/excalidraw/excalidraw)</sub>
 - **ChatGPT4o**:
-  - <sub>generative AI tool used for debugging and development support</sub>
+  - <sub>Generative AI tool used for debugging and development support.</sub>
   - <sub>[website](https://chat.openai.com/)</sub>
   - <sub>[GitHub repository](https://github.com/openai)</sub>
 
 ### Deployment
 
-- Frontend - **Hostinger**:
-  - <sub> web hosting service that offers shared, cloud, and VPS hosting solutions for websites, domains, and custom applications</sub>
+- Frontend - **Hostinger**
+  - <sub>Web hosting service that offers shared, cloud, and VPS hosting solutions for websites, domains, and custom applications</sub>
   - <sub>[UK website](https://www.hostinger.co.uk)</sub>
   - <sub>[US website](https://www.hostinger.com/)</sub>
-- Backend - **Heroku**:
-  - <sub>cloud platform that enables developers to build, run, and scale applications by abstracting away server infrastructure management</sub>
+- Backend - **Heroku**
+  - <sub>Cloud platform that enables developers to build, run, and scale applications by abstracting away server infrastructure management</sub>
   - <sub>[website](https://www.heroku.com/)</sub>
   - <sub>[GitHub repository](https://github.com/heroku)</sub>
 
@@ -201,27 +201,91 @@ This application was built using the `MERN stack`, an open source–centric coll
 - **Documentation**
   - <sub>[axios](https://axios-http.com/docs/intro)</sub>
 - **Udemy**
-
   - <sub>[React, NodeJS, Express & MongoDB - The MERN Fullstack Guide](https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/?couponCode=OF83024F) by [Manuel Lorenz](https://www.udemy.com/user/manuel-lorenz/) & [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
-
   - <sub>[React - The Complete Guide 2024 (incl. Next.js, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595350?start=0#overview) by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
   - <sub>[MERN 2024 Edition - MongoDB, Express, React and NodeJS](https://www.udemy.com/course/mern-stack-course-mongodb-express-react-and-nodejs/) by [John Smilga](https://www.udemy.com/user/janis-smilga-3/)</sub>
   - <sub>[The Complete Node.js Developer Course (3rd Edition)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/) by [Andrew Mead](https://www.udemy.com/user/andrewmead/) & [Rob Percival](https://www.udemy.com/user/robpercival/)</sub>
 
 ## <a name="deliverables"></a> 5. Deliverables
 
-<!--
 ### MVP
+
+#### 1. Authentication & Authorization
+
+- Secure sign-up and login with JWT-based authentication
+- Password hashing
+- Role-based access control to protect user-specific data and routes
+
+#### 2. Full CRUD operations for places:
+
+- Create new places with title, description, and address
+- Upload an image associated with each place
+- Edit or delete only the user’s own places
+- View all users and their shared places
+
+#### 3. Frontend
+
+- Responsive design with a clean, intuitive layout
+- Context API for global state management
+- Custom hooks for HTTP requests and form handling
+- Real-time image preview during place creation
+- Data validation for form inputs
+- Interactive map display using Google Maps API to visualize location data
+
+#### 4. Backend
+
+- RESTful API with modular routing, structured error handling, and data validation
+- Data validation and sanitization
+- Data storage using MongoDB and hosting via MongoDB Atlas
+
+#### 5. Deployment
+
+- Independent deployment of frontend and backend
 
 ### Potential Extra Features / Stretch Goals
 
-### User Stories -->
+- File upload for user profile picture
+- User profile page
+- Dark mode toggle
+- Pagination for places
+- Refresh token and token renewal system
+- Cloudinary or S3 for cloud image storage
+- Optimize image sizes automatically on upload
+- Unit and integration tests (e.g. Jest, React Testing Library, Supertest)
+
+### User stories
+
+#### Authentication & Access Control
+
+- As a user, I should be able to sign up with my email and password, so that I can create an account and start sharing places.
+- As a user, I should be able to log in securely, so that I can access and manage my content.
+- As a user, I should be automatically logged out when my token expires, so that my account stays secure.
+- As a user, I should only be able to access protected pages if I’m authenticated.
+
+#### Place Management
+
+- As a user, I should be able to add a new place with a title, description, address, and image, so that I can share locations I’ve visited.
+- As a user, I should be able to see the address I entered on a map.
+- As a user, I should be able to upload an image when creating a place.
+- As a user, I should be able to preview my image before uploading it.
+- As a user, I should be able to edit or delete a place, so that I can keep my content accurate and up to date.
+- As a user, I should be able to view a list of all places shared by a specific user, so that I can see what others have shared.
+
+### User Experience & Interface
+
+- As a user, I should be able to use the app comfortably on any device.
+- As a user, I should be able to see loading spinners during data fetches, so that I know the app is working.
+- As a user, I should be able to see error messages and modals when something goes wrong, so that I understand what’s happening and how to fix it.
 
 ## <a name="planning"></a> 6. Planning & Build Process
 
-<!-- bronze plan | silver plan | gold plan
+### wireframe
 
-<img src="" alt="wireframe" width="250"> -->
+<img src="./src/assets/images/wireframe.png" alt="wireframe" width="800">
+
+### ERD
+
+<img src="./src/assets/images/erd.png" alt="erd" width="400">
 
 ## <a name="challenges"></a> 7. Challenges
 
