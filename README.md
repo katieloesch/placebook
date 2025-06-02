@@ -26,6 +26,14 @@ image source: []() -->
 
 ## <a name="deployment-link"></a> 2. Deployment Link
 
+:link:&nbsp; https://placebook.katieloesch.co.uk/
+
+backend repository:
+:link:&nbsp; https://github.com/katieloesch/placebook-backend
+
+backend deployment link:
+:link:&nbsp; https://placebook-015dbd92649b.herokuapp.com/
+
 ## <a name="installation"></a> 3. Installation
 
 ## <a name="technologies"></a> 4. Technologies Used
@@ -176,9 +184,17 @@ This application was built using the `MERN stack`, an open source–centric coll
   - <sub>generative AI tool used for debugging and development support</sub>
   - <sub>[website](https://chat.openai.com/)</sub>
   - <sub>[GitHub repository](https://github.com/openai)</sub>
-- **Hostinger**:
-  - <sub>web hosting provider used to deploy the application</sub>
+
+### Deployment
+
+- Frontend - **Hostinger**:
+  - <sub> web hosting service that offers shared, cloud, and VPS hosting solutions for websites, domains, and custom applications</sub>
   - <sub>[UK website](https://www.hostinger.co.uk)</sub>
+  - <sub>[US website](https://www.hostinger.com/)</sub>
+- Backend - **Heroku**:
+  - <sub>cloud platform that enables developers to build, run, and scale applications by abstracting away server infrastructure management</sub>
+  - <sub>[website](https://www.heroku.com/)</sub>
+  - <sub>[GitHub repository](https://github.com/heroku)</sub>
 
 ### Resources and tutorials
 
