@@ -291,9 +291,21 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ## <a name="wins"></a> 8. Wins
 
+- Implemented role-based access control and JWT-based authentication with hashed passwords using bcryptjs, ensuring secure user login and registration.
+- Achieved full CRUD functionality and integrated the Google Maps API to convert user-provided addresses into geo-coordinates, rendering them on a dynamic map.
+- Created custom React hooks to encapsulate HTTP request and form logic, resulting in cleaner and reusable code.
+- Delivered a fully responsive user interface that works across both desktop and mobile devices.
+- Successfully deployed the frontend and backend independently on separate platforms.
+
 ## <a name="takeaways"></a> 9. Key Learnings & Takeaways
 
 ## <a name="future-improvements"></a> 10. Future Improvements
+
+- Testing Suite: Implement unit and integration tests using tools e.g. Jest, React Testing Library, Supertest
+- Cloud Image Storage: Migrate image uploads to cloud-based solutions like Cloudinary or AWS S3
+- Admin Dashboard: Develop an admin interface to view, manage, and moderate all user-generated content.
+- Dark Mode: Introduce a dark mode toggle to accommodate user preferences.
+- Accessibility Enhancements: Conduct accessibility audits and implement features such as keyboard navigation, screen reader compatibility, and ARIA roles to ensure an inclusive user experience.
 
 <!--
 
