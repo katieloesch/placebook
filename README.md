@@ -289,11 +289,36 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ## <a name="challenges"></a> 7. Challenges
 
+- Authorization Logic: Ensuring that only the original creator of a post could edit or delete their own content required careful implementation of role checks and user ID validation on both the client and server sides.
+- CORS Configuration for Cross-Origin Requests: Allowing the frontend and backend to communicate across different domains required configuring CORS headers and handling preflight OPTIONS requests.
+- Address Geocoding: Converting user-entered addresses into geo-coordinates for map display involved integrating a geocoding API, managing fallback behaviour, and gracefully handling errors or ambiguous results.
+- Conditional Routing Based on Auth State: Dynamically rendering routes and navigation links based on the user's authentication status involved using React Context, route guards, and maintaining consistent state across components.
+- File and Error Cleanup: Ensuring that uploaded files weren’t left orphaned after failed requests or remained after their associated places were deleted required implementing cleanup logic both during error handling and on resource deletion.
+
 ## <a name="wins"></a> 8. Wins
+
+- Implemented role-based access control and JWT-based authentication with hashed passwords using bcryptjs, ensuring secure user login and registration.
+- Achieved full CRUD functionality and integrated the Google Maps API to convert user-provided addresses into geo-coordinates, rendering them on a dynamic map.
+- Created custom React hooks to encapsulate HTTP request and form logic, resulting in cleaner and reusable code.
+- Delivered a fully responsive user interface that works across both desktop and mobile devices.
+- Successfully deployed the frontend and backend independently on separate platforms.
 
 ## <a name="takeaways"></a> 9. Key Learnings & Takeaways
 
+- Managed to build a full-stack MERN application from scratch, understanding how frontend and backend systems interact.
+- Learned how to implement secure authentication using JWTs and password hashing with bcryptjs, including route protection on both client and server sides.
+- Gained experience bridging frontend UX with real-world data services by integrating the Google Maps API to dynamically convert addresses into coordinates and display them on an interactive map
+- Developed custom React hooks to abstract logic for HTTP requests and form handling, reinforcing the value of modular, reusable code.
+- Deepened my understanding of CORS, environment variables, and cross-origin cookie/session strategies by deploying and debugging a split-stack MERN app
+
 ## <a name="future-improvements"></a> 10. Future Improvements
+
+- Testing Suite: Implement unit and integration tests using tools e.g. Jest, React Testing Library, Supertest
+- Cloud Image Storage: Migrate image uploads to cloud-based solutions like Cloudinary or AWS S3
+- Admin Dashboard: Develop an admin interface to view, manage, and moderate all user-generated content.
+- Pagination: Introduce pagination for user and place listings to improve performance and user experience on data-heavy pages.
+- Dark Mode: Introduce a dark mode toggle to accommodate user preferences.
+- Accessibility Enhancements: Conduct accessibility audits and implement features such as keyboard navigation, screen reader compatibility, and ARIA roles to ensure an inclusive user experience.
 
 <!--
 
