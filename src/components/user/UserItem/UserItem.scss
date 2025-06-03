@@ -17,8 +17,8 @@
       background: var(--bg1);
 
       .user-item__img {
-        width: 4rem;
-        height: 4rem;
+        width: 4.5rem;
+        height: 4.5rem;
         margin-right: 1rem;
       }
 
@@ -38,13 +38,13 @@
     a:hover,
     a:active {
       transition: 0.4s;
-      background: var(--secondary-accent);
+      background: var(--primary);
 
       .user-item__info {
         h2,
         h3 {
           transition: 0.4s;
-          color: var(--bg1);
+          // color: var(--secondary-accent);
         }
       }
     }

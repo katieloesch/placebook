@@ -1,13 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@font-face {
+  font-family: 'Rimouski Light';
+  src: url('./assets/fonts/rimouski_light/rimouski_light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 :root {
   /* colours */
 
-  --primary: #ff0055;
-  --primary-light: #ff4382;
-  --secondary: #f8df00;
-  --secondary-accent: #ffd900;
+  --primary: #be2a40;
+  --primary-light: #f34f5d;
+  --secondary-accent: #fee47b;
+  --secondary: #ece0c6;
+  --highlight: #850222;
   --bg1: #292929;
+  --bg2: #fff2ea;
+  --brown: #db9596;
 
   --white: white;
   --grey: #ccc;
@@ -23,6 +33,10 @@
   --shadow: rgba(0, 0, 0, 0.26);
 
   /* fonts */
+
+  /* --font-main: 'Open Sans', sans-serif; */
+  --font-main: 'Red Hat Display', sans-serif;
+  --font-editorial: 'Rimouski Light';
 }
 
 * {
@@ -30,12 +44,13 @@
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-main);
 }
 
 body {
   margin: 0;
-  background: #4d4d4d;
+  /* background: #4d4d4d; */
+  background-color: var(--secondary);
 }
 
 .slide-in-left-enter {
