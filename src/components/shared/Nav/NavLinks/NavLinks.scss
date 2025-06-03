@@ -17,14 +17,14 @@
     border: 1px solid transparent;
     color: var(--bg1);
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.4rem 0.6rem;
   }
 
   a:hover,
   a:active,
   a.active {
     transition: 0.4s;
-    background: var(--secondary);
+    background: var(--secondary-accent);
     border-color: var(--bg1);
     color: var(--bg1);
   }
@@ -36,6 +36,7 @@
     background: transparent;
     padding: 0.5rem;
     font: inherit;
+    border-radius: 4px;
   }
 
   button:focus {

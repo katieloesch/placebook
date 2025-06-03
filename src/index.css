@@ -3,11 +3,14 @@
 :root {
   /* colours */
 
-  --primary: #ff0055;
-  --primary-light: #ff4382;
-  --secondary: #f8df00;
-  --secondary-accent: #ffd900;
+  --primary: #be2a40;
+  --primary-light: #f34f5d;
+  --secondary-accent: #fee47b;
+  --secondary: #ece0c6;
+  --highlight: #850222;
   --bg1: #292929;
+  --bg2: #fff2ea;
+  --brown: #db9596;
 
   --white: white;
   --grey: #ccc;
@@ -35,7 +38,8 @@ html {
 
 body {
   margin: 0;
-  background: #4d4d4d;
+  /* background: #4d4d4d; */
+  background-color: var(--secondary);
 }
 
 .slide-in-left-enter {
