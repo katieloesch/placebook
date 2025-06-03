@@ -144,7 +144,12 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### UI and Design
 
-- **Fonts**:
+- **Fonts**
+
+  - main: Red Hat Display, designed by MCKL
+    - <sub>[Google Fonts](https://fonts.google.com/specimen/Red+Hat+Display)</sub>
+  - header: Rimouski Light, designed by Ray Larabie
+    - <sub>[Online WebFonts](https://www.onlinewebfonts.com/download/0d7062aee3ca5fbffdd8f87c8bddf177)</sub>
 
 - **Icons**
   - **Iconify**
