@@ -44,7 +44,7 @@ const NavMain = () => {
           <Link to='/'>
             <FontAwesomeIcon
               icon={faLocationDot}
-              style={{ color: 'white', 'margin-right': '10px' }}
+              style={{ color: 'white', marginRight: '10px' }}
               className='title-icon'
             />
             PlaceBook
