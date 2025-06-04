@@ -1,4 +1,4 @@
-# PlaceBook
+# 📍 PlaceBook
 
 ## Overview
 
@@ -204,12 +204,10 @@ This application was built using the `MERN stack`, an open source–centric coll
 ### UI and Design
 
 - **Fonts**
-
-  - main: Red Hat Display, designed by MCKL
-    - <sub>[Google Fonts](https://fonts.google.com/specimen/Red+Hat+Display)</sub>
-  - header: Rimouski Light, designed by Ray Larabie
+  - main: **Isidora Soft**, designed by Enrique Hernandez Vasquez
+    - <sub>[Font Download](https://font.download/font/isidora-soft-alt)</sub>
+  - header: **Rimouski Light**, designed by Ray Larabie
     - <sub>[Online WebFonts](https://www.onlinewebfonts.com/download/0d7062aee3ca5fbffdd8f87c8bddf177)</sub>
-
 - **Icons**
   - **Iconify**
     - <sub>A free and open-source framework providing access to a vast number of icons, designed for use across various platforms and environments, including React.</sub>
@@ -262,9 +260,24 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### Resources and tutorials
 
-- **Documentation**
+- Documentation
   - <sub>[axios](https://axios-http.com/docs/intro)</sub>
-- **Udemy**
+  - <sub>[express-validator](https://express-validator.github.io/docs/)</sub>
+  - <sub>[FileReader - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)</sub>
+- Blogs
+  - <sub>[How To Use Axios with React](https://www.digitalocean.com/community/tutorials/react-axios-react) by [Paul Halliday](https://www.digitalocean.com/community/users/paulhalliday) and [Christina Gorton](https://www.digitalocean.com/community/users/christinagorton)</sub>
+  - <sub>[Introduction to Multer](https://www.geekster.in/articles/introduction-to-multer/) by [Geekster](https://www.geekster.in/)</sub>
+  - <sub>[Beginner Topic: File Upload With Multer In Nodejs](https://dev.to/ngfizzy/beginner-topic-file-upload-with-multer-in-nodejs-99m) by [Olufisayo Bamidele](https://dev.to/ngfizzy)</sub>
+  - <sub>[How to use the fileReader to show a file with Javascript](https://dev.to/atndesign/how-to-use-the-filereader-to-show-a-file-with-javascript-3i85) by [Moulun Kevin](https://dev.to/atndesign)</sub>
+  - <sub>[How to Handle Form Inputs Efficiently with Express-Validator in ExpressJs](https://www.digitalocean.com/community/tutorials/how-to-handle-form-inputs-efficiently-with-express-validator-in-express-js) by [Chiranjeev Singh](https://www.digitalocean.com/community/users/chiranjeevsingh) and [Abhimanyu Selvan](https://www.digitalocean.com/community/users/abhimanyuselvan)</sub>
+  - <sub>[How to solve CORS error in Node.js and React applications](https://www.codingdeft.com/posts/nodejs-react-cors-error/) by [Abhishek EH/Coding Deft](https://www.codingdeft.com/)</sub>
+  - <sub>[React CORS Guide: What It Is and How to Enable It](https://www.stackhawk.com/blog/react-cors-guide-what-it-is-and-how-to-enable-it/) by [StackHawk](https://www.stackhawk.com/)</sub>
+- YouTube
+  - <sub>[React Axios API Requests | Axios with React JS Tutorial](https://www.youtube.com/watch?v=ZEKBDXGnD4s) by [Dave Gray](https://www.youtube.com/@DaveGrayTeachesCode)</sub>
+  - <sub>[express-validator Node.js tutorial](https://www.youtube.com/watch?v=7i7xmwowwCY) by [Jan Goebel](https://www.youtube.com/watch?v=7i7xmwowwCY)</sub>
+  - <sub>[Uploading Images with Multer | NodeJS and ExpressJS](https://www.youtube.com/watch?v=wIOpe8S2Mk8) by [PedroTech](https://www.youtube.com/@PedroTechnologies)</sub>
+  - <sub>[Image Previews in React with FileReader](https://www.youtube.com/watch?v=BPUgM1Ig4Po) by [Leigh Halliday](https://www.youtube.com/@leighhalliday)</sub>
+- Udemy
   - <sub>[React, NodeJS, Express & MongoDB - The MERN Fullstack Guide](https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/?couponCode=OF83024F) by [Manuel Lorenz](https://www.udemy.com/user/manuel-lorenz/) & [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
   - <sub>[React - The Complete Guide 2024 (incl. Next.js, Redux)](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595350?start=0#overview) by [Maximilian Schwarzmüller](https://www.udemy.com/user/maximilian-schwarzmuller/)</sub>
   - <sub>[MERN 2024 Edition - MongoDB, Express, React and NodeJS](https://www.udemy.com/course/mern-stack-course-mongodb-express-react-and-nodejs/) by [John Smilga](https://www.udemy.com/user/janis-smilga-3/)</sub>
@@ -349,7 +362,7 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### ERD
 
-<img src="./src/assets/images/erd.png" alt="erd" width="400">
+<img src="./src/assets/images/erd.png" alt="erd" width="350">
 
 ## <a name="challenges"></a> 7. Challenges
 
