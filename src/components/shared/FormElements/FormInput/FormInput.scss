@@ -18,15 +18,17 @@
     font: inherit;
     border: 1px solid var(--brown);
     border-radius: 4px;
-    background: var(--offwhite);
+    background: #faecdb;
     padding: 0.15rem 0.5rem;
   }
 
   input:focus,
-  textarea:focus {
+  textarea:focus,
+  input:active,
+  textarea:active {
     outline: none;
-    background: var(--offwhite2);
-    border-color: var(--brown);
+    background: #ffead1;
+    border-color: var(--primary);
   }
 
   &.form-control--invalid {

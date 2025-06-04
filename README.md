@@ -20,9 +20,18 @@ image source: []() -->
 
 ## <a name="description"></a> 1. Description
 
-<!-- <img src="" alt="" width="250">
+<img src="./src/assets/screenshots/screenshot_signup_2.png" alt="screenshot of user registration form" width="250">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_users.png" alt="screenshot of landing page " width="250"><br>
+<img src="./src/assets/screenshots/screenshot_add_place_2.png" alt="screenshot of " width="250">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_places_1.png" alt="screenshot of " width="250">
 
-image source: []() -->
+<br>
+A full-stack MERN application enabling users to share and manage geo-tagged posts of places they’ve visited.
+Users can register, log in and generate posts with a title, description, image and address. Locations are geocoded from the address using the Google Maps API, and images are previewed with the FileReader API before being uploaded using Multer.<br>Access is secured with JWT-based authentication, role-based access control and route protection enforced on both on both the client and server sides.
+Authentication state is managed globally with React Context, enabling dynamic rendering of protected routes and navigation elements. <br>The React frontend features a responsive interface that is styled with SCSS and uses custom hooks for form handling and HTTP requests.The Express backend connects to MongoDB Atlas for persistent storage and provides a RESTful API with validation via express-validator and custom error handling.
+
+<br>
+
+<img src="./src/assets/screenshots/screenshot_login_2.png" alt="screenshot of user login form" width="250">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_places_2.png" alt="screenshot of " width="250"><br>
+<img src="./src/assets/screenshots/screenshot_update_place.png" alt="screenshot of " width="250">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_delete_place.png" alt="screenshot of " width="250">
 
 ## <a name="deployment-link"></a> 2. Deployment Link
 
