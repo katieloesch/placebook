@@ -132,6 +132,16 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### Key Dependencies - Frontend
 
+- **@fortawesome/free-solid-svg-icons** (v6.7.2)
+  - <sub>A package that provides a collection of free, solid-style icons from Font Awesome that can be imported and used in React.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons)</sub>
+  - <sub>[GitHub repository](https://github.com/FortAwesome/Font-Awesome)</sub>
+  - <sub> [website](https://fontawesome.com/)</sub>
+- **@fortawesome/react-fontawesome** (v0.2.2)
+  - <sub>A package that provides a React component for easily rendering Font Awesome icons in React applications.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/@fortawesome/react-fontawesome)</sub>
+  - <sub>[GitHub repository](https://github.com/FortAwesome/react-fontawesome)</sub>
+  - <sub> [website](https://fontawesome.com/)</sub>
 - **react-router-dom** (v6.24.0)
   - <sub>An implementation of react-router that includes additional components for browser-based routing</sub>
   - <sub>[npm page](https://www.npmjs.com/package/react-router-dom)</sub>

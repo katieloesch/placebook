@@ -44,3 +44,9 @@
     display: block;
   }
 }
+
+@media (max-width: 290px) {
+  .title-icon {
+    display: none;
+  }
+}

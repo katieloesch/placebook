@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 import {
   HeaderMain,
@@ -7,6 +9,7 @@ import {
   SideBar,
   Backdrop,
 } from '../../../../components';
+// import { icons } from './../../../../assets/icons';
 import './NavMain.scss';
 
 const NavMain = () => {
@@ -38,7 +41,14 @@ const NavMain = () => {
         </button>
 
         <h1 className='nav-main__title'>
-          <Link to='/'>PlaceBook</Link>
+          <Link to='/'>
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              style={{ color: 'white', 'margin-right': '10px' }}
+              className='title-icon'
+            />
+            PlaceBook
+          </Link>
         </h1>
 
         <nav className='nav-main__header-nav'>
