@@ -22,11 +22,15 @@
 
 <br>
 A full-stack MERN application enabling users to share and manage geo-tagged posts of places they’ve visited.
-Users can register, log in and generate posts with a title, description, image and address. Locations are geocoded from the address using the Google Maps API, and images are previewed with the FileReader API before being uploaded using Multer.<br>Access is secured with JWT-based authentication, role-based access control and route protection enforced on both on both the client and server sides.
-Authentication state is managed globally with React Context, enabling dynamic rendering of protected routes and navigation elements. <br>The React frontend features a responsive interface that is styled with SCSS and uses custom hooks for form handling and HTTP requests.The Express backend connects to MongoDB Atlas for persistent storage and provides a RESTful API with validation via express-validator and custom error handling.
+Users can register, log in and generate posts with a title, description, image and address. Locations are geocoded from the address using the Google Maps API, and images are previewed with the FileReader API before being uploaded using Multer.
+
+<br>
+Access is secured with JWT-based authentication, role-based access control and route protection enforced on both on both the client and server sides.
+Authentication state is managed globally with React Context, enabling dynamic rendering of protected routes and navigation elements.
+
+<br>The React frontend features a responsive interface that is styled with SCSS and uses custom hooks for form handling and HTTP requests.The Express backend connects to MongoDB Atlas for persistent storage and provides a RESTful API with validation via express-validator and custom error handling.
 
 <br></br>
-
 <img src="./src/assets/screenshots/screenshot_login_2.png" alt="screenshot of user login form" height="350">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_places_2.png" alt="screenshot of user places posts" height="350"><br>
 <img src="./src/assets/screenshots/screenshot_update_place.png" alt="screenshot of update place form" height="350">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_delete_place.png" alt="screenshot of delete place confirmation modal" height="350">
 
@@ -128,6 +132,16 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 ### Key Dependencies - Frontend
 
+- **@fortawesome/free-solid-svg-icons** (v6.7.2)
+  - <sub>A package that provides a collection of free, solid-style icons from Font Awesome that can be imported and used in React.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/@fortawesome/free-solid-svg-icons)</sub>
+  - <sub>[GitHub repository](https://github.com/FortAwesome/Font-Awesome)</sub>
+  - <sub> [website](https://fontawesome.com/)</sub>
+- **@fortawesome/react-fontawesome** (v0.2.2)
+  - <sub>A package that provides a React component for easily rendering Font Awesome icons in React applications.</sub>
+  - <sub>[npm page](https://www.npmjs.com/package/@fortawesome/react-fontawesome)</sub>
+  - <sub>[GitHub repository](https://github.com/FortAwesome/react-fontawesome)</sub>
+  - <sub> [website](https://fontawesome.com/)</sub>
 - **react-router-dom** (v6.24.0)
   - <sub>An implementation of react-router that includes additional components for browser-based routing</sub>
   - <sub>[npm page](https://www.npmjs.com/package/react-router-dom)</sub>
