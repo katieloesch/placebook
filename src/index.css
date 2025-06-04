@@ -1,8 +1,24 @@
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap'); */
+
 @font-face {
   font-family: 'Rimouski Light';
   src: url('./assets/fonts/rimouski_light/rimouski_light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Isidora Soft';
+  src: url('./assets/fonts/isidora_soft/isidora_soft_medium.woff')
+    format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Isidora Soft';
+  src: url('./assets/fonts/isidora_soft/isidora_soft_regular.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,8 +51,9 @@
   /* fonts */
 
   /* --font-main: 'Open Sans', sans-serif; */
-  --font-main: 'Red Hat Display', sans-serif;
-  --font-editorial: 'Rimouski Light';
+  /* --font-main: 'Red Hat Display', sans-serif; */
+  --font-main: 'Isidora Soft', sans-serif;
+  --font-editorial: 'Rimouski Light', sans-serif;
 }
 
 * {
