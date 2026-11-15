@@ -3,15 +3,14 @@
 ## Overview
 
 1. [Description](#description)
-2. [Deployment Link](#deployment-link)
-3. [Installation](#installation)
-4. [Technologies Used](#technologies)
-5. [Deliverables](#deliverables)
-6. [Planning & Build Process](#planning)
-7. [Challenges](#challenges)
-8. [Wins](#wins)
-9. [Key Learnings & Takeaways](#takeaways)
-10. [Future Improvements](#future-improvements)
+2. [Installation](#installation)
+3. [Technologies Used](#technologies)
+4. [Deliverables](#deliverables)
+5. [Planning & Build Process](#planning)
+6. [Challenges](#challenges)
+7. [Wins](#wins)
+8. [Key Learnings & Takeaways](#takeaways)
+9. [Future Improvements](#future-improvements)
 
 ---
 
@@ -34,13 +33,7 @@ Authentication state is managed globally with React Context, enabling dynamic re
 <img src="./src/assets/screenshots/screenshot_login_2.png" alt="screenshot of user login form" height="350">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_places_2.png" alt="screenshot of user places posts" height="350"><br>
 <img src="./src/assets/screenshots/screenshot_update_place.png" alt="screenshot of update place form" height="350">&nbsp;&nbsp;<img src="./src/assets/screenshots/screenshot_delete_place.png" alt="screenshot of delete place confirmation modal" height="350">
 
-## <a name="deployment-link"></a> 2. Deployment Link
-
-:link:&nbsp; https://placebook.katieloesch.co.uk/
-
-backend repository - https://github.com/katieloesch/placebook-backend
-
-## <a name="installation"></a> 3. Installation
+## <a name="installation"></a> 2. Installation
 
 To run the application locally:
 
@@ -95,7 +88,7 @@ npm start
 - This should launch the frontend on `http://localhost:3000` in your default browser
 - If it doesn’t open automatically, visit that address manually in your browser.
 
-## <a name="technologies"></a> 4. Technologies Used
+## <a name="technologies"></a> 3. Technologies Used
 
 ### Core Technologies
 
@@ -297,7 +290,7 @@ This application was built using the `MERN stack`, an open source–centric coll
   - <sub>[MERN 2024 Edition - MongoDB, Express, React and NodeJS](https://www.udemy.com/course/mern-stack-course-mongodb-express-react-and-nodejs/) by [John Smilga](https://www.udemy.com/user/janis-smilga-3/)</sub>
   - <sub>[The Complete Node.js Developer Course (3rd Edition)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/) by [Andrew Mead](https://www.udemy.com/user/andrewmead/) & [Rob Percival](https://www.udemy.com/user/robpercival/)</sub>
 
-## <a name="deliverables"></a> 5. Deliverables
+## <a name="deliverables"></a> 4. Deliverables
 
 ### MVP
 
@@ -368,7 +361,7 @@ This application was built using the `MERN stack`, an open source–centric coll
 - As a user, I should be able to see loading spinners during data fetches, so that I know the app is working.
 - As a user, I should be able to see error messages and modals when something goes wrong, so that I understand what’s happening and how to fix it.
 
-## <a name="planning"></a> 6. Planning & Build Process
+## <a name="planning"></a> 5. Planning & Build Process
 
 ### wireframe
 
@@ -378,7 +371,7 @@ This application was built using the `MERN stack`, an open source–centric coll
 
 <img src="./src/assets/images/erd.png" alt="erd" width="350">
 
-## <a name="challenges"></a> 7. Challenges
+## <a name="challenges"></a> 6. Challenges
 
 - Authorization Logic: Ensuring that only the original creator of a post could edit or delete their own content required careful implementation of role checks and user ID validation on both the client and server sides.
 - CORS Configuration for Cross-Origin Requests: Allowing the frontend and backend to communicate across different domains required configuring CORS headers and handling preflight OPTIONS requests.
@@ -386,7 +379,7 @@ This application was built using the `MERN stack`, an open source–centric coll
 - Conditional Routing Based on Auth State: Dynamically rendering routes and navigation links based on the user's authentication status involved using React Context, route guards, and maintaining consistent state across components.
 - File and Error Cleanup: Ensuring that uploaded files weren’t left orphaned after failed requests or remained after their associated places were deleted required implementing cleanup logic both during error handling and on resource deletion.
 
-## <a name="wins"></a> 8. Wins
+## <a name="wins"></a> 7. Wins
 
 - Implemented role-based access control and JWT-based authentication with hashed passwords using bcryptjs, ensuring secure user login and registration.
 - Achieved full CRUD functionality and integrated the Google Maps API to convert user-provided addresses into geo-coordinates, rendering them on a dynamic map.
@@ -394,7 +387,7 @@ This application was built using the `MERN stack`, an open source–centric coll
 - Delivered a fully responsive user interface that works across both desktop and mobile devices.
 - Successfully deployed the frontend and backend independently on separate platforms.
 
-## <a name="takeaways"></a> 9. Key Learnings & Takeaways
+## <a name="takeaways"></a> 8. Key Learnings & Takeaways
 
 - Managed to build a full-stack MERN application from scratch, understanding how frontend and backend systems interact.
 - Learned how to implement secure authentication using JWTs and password hashing with bcryptjs, including route protection on both client and server sides.
@@ -402,7 +395,7 @@ This application was built using the `MERN stack`, an open source–centric coll
 - Developed custom React hooks to abstract logic for HTTP requests and form handling, reinforcing the value of modular, reusable code.
 - Deepened my understanding of CORS, environment variables, and cross-origin cookie/session strategies by deploying and debugging a split-stack MERN app
 
-## <a name="future-improvements"></a> 10. Future Improvements
+## <a name="future-improvements"></a> 9. Future Improvements
 
 - Testing Suite: Implement unit and integration tests using tools e.g. Jest, React Testing Library, Supertest
 - Cloud Image Storage: Migrate image uploads to cloud-based solutions like Cloudinary or AWS S3
